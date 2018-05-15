@@ -22,4 +22,9 @@ class Produtos
     {
         parent::__construct;
     }
+
+    function get_produtos()
+    {
+        $query = "SELECT * FROM produtos ORDER BY data_atualizacao DESC";
+    }
 }

@@ -6,26 +6,29 @@ namespace Composer\Autoload;
 
 class ComposerStaticInita0a1e12c94c75c5e68fe9cf5e1f3f9b2
 {
-    public static $files = array(
+    public static $files = array (
         'f084d01b0a599f67676cffef638aa95b' => __DIR__ . '/..' . '/smarty/smarty/libs/bootstrap.php',
     );
 
-    public static $prefixLengthsPsr4 = array(
-        'P' =>
-            array(
-                'PHPMailer\\PHPMailer\\' => 20,
-            ),
+    public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
     );
 
-    public static $prefixDirsPsr4 = array(
-        'PHPMailer\\PHPMailer\\' =>
-            array(
-                0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
-            ),
+    public static $prefixDirsPsr4 = array (
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
     );
 
-    public static $classMap = array(
+    public static $classMap = array (
+        'Conexao' => __DIR__ . '/../..' . '/model/Conexao.class.php',
         'Config' => __DIR__ . '/../..' . '/model/Config.class.php',
+        'Frete' => __DIR__ . '/../..' . '/model/Frete.class.php',
+        'Produtos' => __DIR__ . '/../..' . '/model/Produtos.class.php',
         'Rotas' => __DIR__ . '/../..' . '/model/Rotas.class.php',
         'Template' => __DIR__ . '/../..' . '/model/Template.class.php',
     );

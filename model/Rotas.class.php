@@ -39,7 +39,7 @@ Class Rotas
             if (file_exists($pagina)) {
                 include $pagina;
             } else {
-                include 'erro.php';
+                include '404.php';
             }
         } else {
             include 'controller/produtos.php';

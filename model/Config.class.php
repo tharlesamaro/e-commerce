@@ -13,8 +13,8 @@ Class Config
     const SITE_NAME = "E-commerce | Tharles";
 
     const DB_HOST = "localhost";
-    const DB_USER = "";
-    const DB_PASSWORD = "";
-    const DB_DATABASE = "";
+    const DB_USER = "tharles";
+    const DB_PASSWORD = "12345678";
+    const DB_DATABASE = "ecommerce";
 }
 

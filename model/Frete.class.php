@@ -32,7 +32,9 @@ class Frete
         $url .= "&nVlValorDeclarado=" . $preco;
         $url .= "&sCdAvisoRecebimento=n";
         $url .= "&StrRetorno=xml";
+
         $xml = simplexml_load_file($url);
+
         return $xml->cServico;
     }
 }

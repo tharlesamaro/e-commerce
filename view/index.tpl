@@ -10,8 +10,12 @@
     <link rel="stylesheet" href="{$BASE_URL}/assets/css/main.css">
     <link rel="stylesheet" href="{$BASE_URL}/assets/css/bootstrap.min.css">
     <script src="{$BASE_URL}/assets/js/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
     <script src="{$BASE_URL}/assets/js/main.js"></script>
     <script src="{$BASE_URL}/assets/js/bootstrap.min.js"></script>
+    <script src="{$BASE_URL}/assets/js/jquery.maskedinput.js"></script>
+    <script src="{$BASE_URL}/assets/js/jquery.maskMoney.min.js"></script>
+    <script src="{$BASE_URL}/assets/js/mascaras.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
