@@ -1,4 +1,27 @@
-<form class="" action="#" method="post">
+<?php
+/* Smarty version 3.1.32, created on 2018-05-15 13:44:31
+  from '/var/www/html/ecommerce/view/form_cadastro.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5afb0e6f22aba0_85633846',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '36c59368f3dce7d5bac3b2ae633e6ad1d8850262' => 
+    array (
+      0 => '/var/www/html/ecommerce/view/form_cadastro.tpl',
+      1 => 1526402668,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5afb0e6f22aba0_85633846 (Smarty_Internal_Template $_smarty_tpl) {
+?><form class="" action="#" method="post">
     <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" class="form-control" id="nome" name="nome" autofocus tabindex="1"
@@ -58,7 +81,10 @@
             <button class="btn btn-danger form-control" type="button" tabindex="">Limpar</button>
         </div>
         <div class="form-group col-4">
-            <a class="btn btn-danger form-control" href="{$BASE_URL}" tabindex="">Cancelar</a>
+            <a class="btn btn-danger form-control" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+" tabindex="">Cancelar</a>
         </div>
     </div>
 </form>
+<?php }
+}

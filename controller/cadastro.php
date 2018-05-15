@@ -6,4 +6,6 @@
  * Time: 10:19
  */
 
-echo "página de cadastro";
+$smarty = new Template();
+$smarty->assign('BASE_URL', Rotas::get_site_home());
+$smarty->display('form_cadastro.tpl');
