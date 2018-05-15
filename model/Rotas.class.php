@@ -8,23 +8,34 @@
 
 Class Rotas
 {
+    public static $pag;
+
     function __construct()
     {
         parent::__construct();
     }
 
-    public static $pag;
+    static function get_site_home()
+    {
+        return Config::SITE_URL . '/' . Config::SITE_FOLDER;
+    }
+
+    static function get_site_root()
+    {
+        return $_SERVER['DOCUMENT_ROOT'] . '/' . Config::SITE_FOLDER;
+    }
+
+    static function get_site_cadastro()
+    {
+        return self::get_site_home() . '/cadastro';
+    }
 
     static function get_pag()
     {
         if (isset($_GET['pag'])) {
-
             $pagina = $_GET['pag'];
-
             self::$pag = explode('/', $pagina);
-
             $pagina = 'controller/' . self::$pag[0] . '.php';
-
             if (file_exists($pagina)) {
                 include $pagina;
             } else {

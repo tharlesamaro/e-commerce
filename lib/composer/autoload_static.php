@@ -6,25 +6,26 @@ namespace Composer\Autoload;
 
 class ComposerStaticInita0a1e12c94c75c5e68fe9cf5e1f3f9b2
 {
-    public static $files = array (
+    public static $files = array(
         'f084d01b0a599f67676cffef638aa95b' => __DIR__ . '/..' . '/smarty/smarty/libs/bootstrap.php',
     );
 
-    public static $prefixLengthsPsr4 = array (
-        'P' => 
-        array (
-            'PHPMailer\\PHPMailer\\' => 20,
-        ),
+    public static $prefixLengthsPsr4 = array(
+        'P' =>
+            array(
+                'PHPMailer\\PHPMailer\\' => 20,
+            ),
     );
 
-    public static $prefixDirsPsr4 = array (
-        'PHPMailer\\PHPMailer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
-        ),
+    public static $prefixDirsPsr4 = array(
+        'PHPMailer\\PHPMailer\\' =>
+            array(
+                0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+            ),
     );
 
-    public static $classMap = array (
+    public static $classMap = array(
+        'Config' => __DIR__ . '/../..' . '/model/Config.class.php',
         'Rotas' => __DIR__ . '/../..' . '/model/Rotas.class.php',
         'Template' => __DIR__ . '/../..' . '/model/Template.class.php',
     );

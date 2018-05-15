@@ -7,7 +7,7 @@
  * Time: 16:00
  */
 
-Class Template extends Smarty
+Class Template extends SmartyBC
 {
     function __construct()
     {
