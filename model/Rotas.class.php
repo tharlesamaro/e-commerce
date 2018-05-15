@@ -41,6 +41,8 @@ Class Rotas
             } else {
                 include 'erro.php';
             }
+        } else {
+            include 'controller/produtos.php';
         }
     }
 }
