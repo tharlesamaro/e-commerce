@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-16 17:23:09
+/* Smarty version 3.1.32, created on 2018-05-16 18:55:56
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afc932da9a9d6_88431536',
+  'unifunc' => 'content_5afca8ec965638_21672115',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526502178,
+      1 => 1526507749,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afc932da9a9d6_88431536 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afca8ec965638_21672115 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row text-center">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
@@ -70,14 +70,29 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
         <li class="page-item">
-            <a class="page-link" href="#">Next</a>
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <?php
+$_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['foo']->step = 1;$_smarty_tpl->tpl_vars['foo']->total = (int) ceil(($_smarty_tpl->tpl_vars['foo']->step > 0 ? $_smarty_tpl->tpl_vars['numero_de_paginas']->value+1 - (0) : 0-($_smarty_tpl->tpl_vars['numero_de_paginas']->value)+1)/abs($_smarty_tpl->tpl_vars['foo']->step));
+if ($_smarty_tpl->tpl_vars['foo']->total > 0) {
+for ($_smarty_tpl->tpl_vars['foo']->value = 0, $_smarty_tpl->tpl_vars['foo']->iteration = 1;$_smarty_tpl->tpl_vars['foo']->iteration <= $_smarty_tpl->tpl_vars['foo']->total;$_smarty_tpl->tpl_vars['foo']->value += $_smarty_tpl->tpl_vars['foo']->step, $_smarty_tpl->tpl_vars['foo']->iteration++) {
+$_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration === 1;$_smarty_tpl->tpl_vars['foo']->last = $_smarty_tpl->tpl_vars['foo']->iteration === $_smarty_tpl->tpl_vars['foo']->total;?>
+            <li class="page-item"><a class="page-link" href="<?php echo $_smarty_tpl->tpl_vars['url_paginacao']->value;
+echo $_smarty_tpl->tpl_vars['foo']->value+1;?>
+"><?php echo $_smarty_tpl->tpl_vars['foo']->value+1;?>
+</a></li>
+        <?php }
+}
+?>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
         </li>
     </ul>
 </nav>

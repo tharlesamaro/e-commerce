@@ -16,7 +16,6 @@ class Produtos extends Conexao
     function get_produtos()
     {
         $query = "SELECT * FROM produtos ORDER BY prod_data_atualizacao DESC";
-        var_dump($query);
         $this->execute_query($query);
         $this->get_lista();
     }
