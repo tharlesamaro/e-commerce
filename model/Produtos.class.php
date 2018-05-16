@@ -16,6 +16,7 @@ class Produtos extends Conexao
     function get_produtos()
     {
         $query = "SELECT * FROM produtos ORDER BY prod_data_atualizacao DESC";
+        var_dump($query);
         $this->execute_query($query);
         $this->get_lista();
     }
@@ -23,6 +24,13 @@ class Produtos extends Conexao
     function get_produto_by_id($id)
     {
         $query = "SELECT * FROM produtos WHERE prod_id = {$id}";
+        $this->execute_query($query);
+        $this->get_lista();
+    }
+
+    function get_produtos_by_pag($pagina, $itens_por_pagina)
+    {
+        $query = "SELECT * FROM produtos ORDER BY prod_data_atualizacao DESC LIMIT {$pagina}, {$itens_por_pagina}";
         $this->execute_query($query);
         $this->get_lista();
     }

@@ -8,9 +8,6 @@
 
 $smarty = new Template();
 $produto = new Produtos();
-
 $produto->get_produto_by_id(Rotas::$pag[1]);
-
 $smarty->assign('produto', $produto->get_itens());
-
 $smarty->display('produto.tpl');

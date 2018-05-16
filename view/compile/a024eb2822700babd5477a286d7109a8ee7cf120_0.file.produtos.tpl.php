@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-16 12:27:46
+/* Smarty version 3.1.32, created on 2018-05-16 17:18:52
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afc4df256ab94_85654166',
+  'unifunc' => 'content_5afc922c78da65_96373808',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526484462,
+      1 => 1526501927,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afc4df256ab94_85654166 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afc922c78da65_96373808 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row text-center">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
@@ -57,7 +57,8 @@ if ($_prefixVariable1 == 's' && $_prefixVariable2 <= date('Y-m-d') && $_prefixVa
                 <div class="card-footer">
                     <a href="<?php echo $_smarty_tpl->tpl_vars['produto']->value;
 echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
-" class="btn btn-primary"><i class="fa fa-eye"></i> Ver produto!</a>
+" class="btn btn-primary"><i class="fa fa-eye"></i> Ver
+                        produto!</a>
                 </div>
             </div>
         </div>
@@ -66,5 +67,16 @@ echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>
+
 <?php }
 }

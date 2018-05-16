@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-16 03:12:14
+/* Smarty version 3.1.32, created on 2018-05-16 13:40:41
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afbcbbe6c8991_13287141',
+  'unifunc' => 'content_5afc5f09044397_64322074',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526451130,
+      1 => 1526486972,
       2 => 'file',
     ),
   ),
@@ -20,19 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afbcbbe6c8991_13287141 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afc5f09044397_64322074 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
-
     <div class="col-lg-3">
         <h1 class="my-4">Calcular Frete</h1>
         <div class="list-group">
 
         </div>
     </div>
-    <!-- /.col-lg-3 -->
-
     <div class="col-lg-9">
-
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
 if ($_from !== null) {
@@ -47,8 +43,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 </h4>
                     <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['p']->value['prod_descricao'];?>
 </p>
-                    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                    4.0 stars
+                    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                    5.0 estrelas
                 </div>
             </div>
             <!-- /.card -->
@@ -72,15 +68,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
                 </div>
             </div>
 
-            <a href="#" class="produto-info-footer btn btn-success">Comprar</a>
+            <a href="#" class="produto-info-footer btn btn-success"><i class="fa fa-shopping-cart"></i> Comprar</a>
             <br>
-            <!-- /.card -->
         <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
-    <!-- /.col-lg-9 -->
-
-</div><?php }
+</div>
+<?php }
 }

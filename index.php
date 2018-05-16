@@ -8,12 +8,7 @@
 
 require './lib/autoload.php';
 
-$smarty = new Template();
-
-$smarty->assign('NOME', 'Tharles');
-$smarty->assign('BASE_URL', Rotas::get_site_home());
-
 $database = new Conexao();
-
-
+$smarty = new Template();
+$smarty->assign('BASE_URL', Rotas::get_site_home());
 $smarty->display('index.tpl');

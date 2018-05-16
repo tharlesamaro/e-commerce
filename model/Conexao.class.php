@@ -14,7 +14,6 @@ Class Conexao extends Config
     private $database;
     protected $obj;
     protected $itens = [];
-    //protected $prefix;
 
     function __construct()
     {

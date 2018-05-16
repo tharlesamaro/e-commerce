@@ -1,15 +1,11 @@
 <div class="row">
-
     <div class="col-lg-3">
         <h1 class="my-4">Calcular Frete</h1>
         <div class="list-group">
 
         </div>
     </div>
-    <!-- /.col-lg-3 -->
-
     <div class="col-lg-9">
-
         {foreach from=$produto item=p}
             <div class="card-produto-info card mt-4">
                 <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
@@ -17,8 +13,8 @@
                     <h3 class="card-title">{$p.prod_nome}</h3>
                     <h4>R$ {$p.prod_preco}</h4>
                     <p class="card-text">{$p.prod_descricao}</p>
-                    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                    4.0 stars
+                    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                    5.0 estrelas
                 </div>
             </div>
             <!-- /.card -->
@@ -38,11 +34,8 @@
                 </div>
             </div>
 
-            <a href="#" class="produto-info-footer btn btn-success">Comprar</a>
+            <a href="#" class="produto-info-footer btn btn-success"><i class="fa fa-shopping-cart"></i> Comprar</a>
             <br>
-            <!-- /.card -->
         {/foreach}
     </div>
-    <!-- /.col-lg-9 -->
-
 </div>
