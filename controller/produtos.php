@@ -8,7 +8,7 @@
 
 $smarty = new Template();
 $produtos = new Produtos();
-$produtoteste = new Produtos();
+$produtos1 = new Produtos();
 //$produtos->get_produtos();
 //$smarty->assign('produtos', $produtos->get_itens());
 $smarty->assign('produto', Rotas::get_produto());
@@ -23,17 +23,23 @@ $smarty->assign('produto', Rotas::get_produto());
 $itens_por_pagina = 8;
 
 //pegar_a_pagina_atual
-$pagina_atual = Rotas::$pag[1] - 1;
+$pagina_atual = Rotas::$pag[1];
 
 //query para pegar os registros com o limite
-$produtos->get_produtos_by_pag($pagina_atual, $itens_por_pagina);
+
+
+$produtos1->get_produtos();
+$total_de_produtos = $produtos1->total_data();
+
+//numero de paginas necessarias para apresentar os itens
+$numero_de_paginas = ceil($total_de_produtos / $itens_por_pagina);
+
+//calcular o inicio da visualização
+$inicio = ($itens_por_pagina * $pagina_atual) - $itens_por_pagina;
+
+$produtos->get_produtos_by_pag($inicio, $itens_por_pagina);
 
 $smarty->assign('produtos', $produtos->get_itens());
-
-$produtoteste->get_produtos();
-$num_total = $produtoteste->total_data();
-
-$numero_de_paginas = ceil($num_total / $itens_por_pagina);
 
 $smarty->assign('numero_de_paginas', $numero_de_paginas);
 

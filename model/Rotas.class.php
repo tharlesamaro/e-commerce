@@ -31,6 +31,11 @@ Class Rotas
         return self::get_site_home() . '/cadastro';
     }
 
+    static function get_produtos()
+    {
+        return self::get_site_home() . '/produtos/';
+    }
+
     static function get_produto()
     {
         return self::get_site_home() . '/produto/';
