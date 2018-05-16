@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 15/05/2018 às 21:15
+-- Tempo de geração: 16/05/2018 às 19:16
 -- Versão do servidor: 10.0.34-MariaDB-0ubuntu0.16.04.1
 -- Versão do PHP: 7.2.5-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -54,8 +54,19 @@ INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_descricao`, `prod_preco`, 
 (4, 'Sofá de Couro', 'Sofá de couro de última geração. Couro vegetal, não polui o meio ambiente e ainda preserva a vida dos animais.', 2000.00, 6.00, 20.00, 20.300, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-15 20:16:00'),
 (5, 'Ventilador Arno', 'Ventilador Arno muito bom ahsuauhsdiahsidfhaidhfiadhfia', 50.98, 6.00, 20.00, 2.330, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-15 21:09:53'),
 (6, 'Cadeira Branca', 'Cadeira branca de plastico que é usada para ser alugada em aniversários. Muito bom e bem cara!!!', 200.00, 6.00, 20.00, 0.500, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-15 21:10:54'),
-(7, 'Televisão LG', 'Televisão 4k da LG. Muito boa e a tela não quebra nunca. Resistente a água.', 14999.99, 6.00, 20.00, 2.500, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-15 21:11:57'),
-(8, 'Porta de madeira suiça', 'Porta de madeira suiça importada. Resistente a cupim e outras pragas! Material refinado.', 300.00, 6.00, 20.00, 8.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-15 21:12:51');
+(7, 'Televisão LG', 'Televisão 4k da LG. Muito boa e a tela não quebra nunca. Resistente a água.', 14999.99, 6.00, 20.00, 2.500, 20.00, 's', '500.00', '2018-05-15', '2018-05-23', 'teste', '2018-05-15 21:11:57'),
+(8, 'Porta de madeira suiça', 'Porta de madeira suiça importada. Resistente a cupim e outras pragas! Material refinado.', 300.00, 6.00, 20.00, 8.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-15 21:12:51'),
+(9, 'Produto 9', 'adfkhdkfahkjdhfkahfkahdkhfakdhfjakhdfkahdkfhakdjhfkahdkfhasdkjfhakdfha', 400.00, 6.00, 20.00, 40.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:10:29'),
+(10, 'Produto 10', 'adfkhdkfahkjdhfkahfkahdkhfakdhfjakhdfkahdkfhakdjhfkahdkfhasdkjfhakdfha', 400.00, 6.00, 20.00, 40.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:11:01'),
+(11, 'produto 11', 'dfadfasdfasdfasdfkabdskfbsadkf akfad fajdkfkasd kfakdfakj dkjabdksj fjksdkjfakjdfka', 1000.00, 6.00, 20.00, 7.000, 20.00, 's', '800.00', '2018-05-15', '2018-05-17', 'teste', '2018-05-16 17:12:23'),
+(12, 'produto 12', 'fadsfasdfadsf adf adf ad fa dfadfadfadf adfadf adfa dfadfadfadsf adfasdf adf adf ad', 10000.00, 6.00, 20.00, 5.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:12:23'),
+(13, 'produto 13', 'sfsadfasdfa adfadfadsfa adfadfasdf adfadfadf adfasd afsadfasd adsfadsfa fasdfa fasdfad fadfasdf', 400.00, 6.00, 20.00, 4.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:13:22'),
+(14, 'produto 14', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:13:52'),
+(15, 'produto 15', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:14:21'),
+(16, 'produto 16', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:14:36'),
+(17, 'produto 17', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:14:53'),
+(18, 'produto 18', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:15:11'),
+(19, 'produto 19', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste', '2018-05-16 17:15:26');
 
 --
 -- Índices de tabelas apagadas
@@ -75,7 +86,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
