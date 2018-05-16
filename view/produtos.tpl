@@ -1,14 +1,21 @@
 <div class="row text-center">
-    {foreach from=$PRODUTOS item=P}
+    {foreach from=$produtos item=p}
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
                 <img class="card-img-top" src="http://placehold.it/500x325" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">{$P.prod_nome}</h4>
-                    <p class="card-text">R$ {$P.prod_preco}</p>
+                    <h4 class="card-title">{$p.prod_nome}</h4>
+                    {if {$p.prod_promocao} eq 's' and {$p.prod_data_inicial_promocao} le date('Y-m-d') and {$p.prod_data_final_promocao} ge date('Y-m-d')}
+                        <p class="text-danger card-text" id="preco">
+                            <del>R$ {$p.prod_preco}</del>
+                        </p>
+                        <p class="text-success card-text">R$ {$p.prod_preco_promocao}</p>
+                    {else}
+                        <p class="card-text text-success">R$ {$p.prod_preco}</p>
+                    {/if}
                 </div>
                 <div class="card-footer">
-                    <a href="{$PRODUTO}{$P.prod_id}" class="btn btn-primary">Ver produto!</a>
+                    <a href="{$produto}{$p.prod_id}" class="btn btn-primary">Ver produto!</a>
                 </div>
             </div>
         </div>

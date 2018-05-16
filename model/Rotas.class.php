@@ -42,13 +42,8 @@ Class Rotas
             $pagina = $_GET['pag'];
             self::$pag = explode('/', $pagina);
             $pagina = 'controller/' . self::$pag[0] . '.php';
-            if (isset(self::$pag[1]) && self::$pag[1] != null) {
-                self::$pag_prod_id = self::$pag[1];
-            }
-            //var_dump(self::$pag_prod_id);
             if (file_exists($pagina)) {
                 include $pagina;
-                return self::$pag_prod_id;
             } else {
                 include '404.php';
             }

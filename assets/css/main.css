@@ -2,6 +2,14 @@
     margin-top: 50px;
 }
 
+.card-produto-info {
+    height: auto !important;
+}
+
+.produto-info-footer {
+    margin-bottom: 40px;
+}
+
 /*!
  * Start Bootstrap - Heroic Features (https://startbootstrap.com/template-overviews/heroic-features)
  * Copyright 2013-2017 Start Bootstrap
