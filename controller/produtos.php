@@ -7,4 +7,10 @@
  */
 
 $smarty = new Template();
+
+$produtos = new Produtos();
+$produtos->get_produtos();
+
+$smarty->assign('PRO', $produtos->get_itens());
+
 $smarty->display('produtos.tpl');

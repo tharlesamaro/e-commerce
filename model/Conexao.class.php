@@ -12,7 +12,9 @@ Class Conexao extends Config
     private $password;
     private $host;
     private $database;
-    private $obj;
+    protected $obj;
+    protected $itens = [];
+    protected $prefix;
 
     function __construct()
     {
@@ -54,5 +56,10 @@ Class Conexao extends Config
     function total_data()
     {
         return $this->obj->rowCount();
+    }
+
+    function get_itens()
+    {
+        return $this->itens;
     }
 }

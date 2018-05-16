@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-15 15:58:24
+/* Smarty version 3.1.32, created on 2018-05-15 21:08:22
   from '/var/www/html/ecommerce/view/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afb2dd085fe33_69628646',
+  'unifunc' => 'content_5afb7676ed8e46_28057089',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cff7f739282368a633973b96f8ed9aefc2f1b29a' => 
     array (
       0 => '/var/www/html/ecommerce/view/index.tpl',
-      1 => 1526410489,
+      1 => 1526429296,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afb2dd085fe33_69628646 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afb7676ed8e46_28057089 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
 <head>
@@ -91,11 +91,11 @@ function content_5afb2dd085fe33_69628646 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </div>
 </nav>
-<div class="container-fluid conteudo">
+<div class="container conteudo">
     <?php 
         Rotas::get_pag();
     ?>
 </div>
-</body>
+                </body>
 </html><?php }
 }
