@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="{$BASE_URL}/assets/css/normalize.css">
     <link rel="stylesheet" href="{$BASE_URL}/assets/css/main.css">
     <link rel="stylesheet" href="{$BASE_URL}/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{$BASE_URL}/assets/font/web-fonts-with-css/css/fontawesome-all.css">
     <script src="{$BASE_URL}/assets/js/jquery/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="{$BASE_URL}/assets/js/jquery/jquery1.10.2.min.js" type="text/javascript"></script>
     <script src="{$BASE_URL}/assets/js/main.js"></script>
     <script src="{$BASE_URL}/assets/js/bootstrap.min.js"></script>
     <script src="{$BASE_URL}/assets/js/jquery.maskedinput.js"></script>

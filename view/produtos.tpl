@@ -15,7 +15,7 @@
                     {/if}
                 </div>
                 <div class="card-footer">
-                    <a href="{$produto}{$p.prod_id}" class="btn btn-primary">Ver produto!</a>
+                    <a href="{$produto}{$p.prod_id}" class="btn btn-primary"><i class="fa fa-eye"></i> Ver produto!</a>
                 </div>
             </div>
         </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-16 10:55:49
+/* Smarty version 3.1.32, created on 2018-05-16 12:27:46
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afc3865122048_55694159',
+  'unifunc' => 'content_5afc4df256ab94_85654166',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526478940,
+      1 => 1526484462,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afc3865122048_55694159 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afc4df256ab94_85654166 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row text-center">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
@@ -57,7 +57,7 @@ if ($_prefixVariable1 == 's' && $_prefixVariable2 <= date('Y-m-d') && $_prefixVa
                 <div class="card-footer">
                     <a href="<?php echo $_smarty_tpl->tpl_vars['produto']->value;
 echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
-" class="btn btn-primary">Ver produto!</a>
+" class="btn btn-primary"><i class="fa fa-eye"></i> Ver produto!</a>
                 </div>
             </div>
         </div>

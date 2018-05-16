@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-15 21:08:22
+/* Smarty version 3.1.32, created on 2018-05-16 11:21:37
   from '/var/www/html/ecommerce/view/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afb7676ed8e46_28057089',
+  'unifunc' => 'content_5afc3e71a26f70_78596217',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cff7f739282368a633973b96f8ed9aefc2f1b29a' => 
     array (
       0 => '/var/www/html/ecommerce/view/index.tpl',
-      1 => 1526429296,
+      1 => 1526480424,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afb7676ed8e46_28057089 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afc3e71a26f70_78596217 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
 <head>
@@ -35,6 +35,8 @@ function content_5afb7676ed8e46_28057089 (Smarty_Internal_Template $_smarty_tpl)
 /assets/css/main.css">
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 /assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+/assets/font/web-fonts-with-css/css/fontawesome-all.css">
     <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 /assets/js/jquery/jquery.min.js"><?php echo '</script'; ?>
