@@ -20,6 +20,13 @@ class Produtos extends Conexao
         $this->get_lista();
     }
 
+    function get_produto_by_id($id)
+    {
+        $query = "SELECT * FROM produtos WHERE prod_id = {$id}";
+        $this->execute_query($query);
+        $this->get_lista();
+    }
+
     private function get_lista()
     {
         $i = 0;
@@ -36,7 +43,8 @@ class Produtos extends Conexao
                 'prod_preco_promocao' => $lista['prod_preco_promocao'],
                 'prod_data_inicial_promocao' => $lista['prod_data_inicial_promocao'],
                 'prod_data_final_promocao' => $lista['prod_data_final_promocao'],
-                'prod_imagem' => $lista['prod_imagem']
+                'prod_imagem' => $lista['prod_imagem'],
+                'prod_descricao' => $lista['prod_descricao']
             ];
             $i++;
         }

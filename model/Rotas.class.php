@@ -9,6 +9,7 @@
 Class Rotas
 {
     public static $pag;
+    public static $pag_prod_id;
 
     function __construct()
     {
@@ -30,14 +31,24 @@ Class Rotas
         return self::get_site_home() . '/cadastro';
     }
 
+    static function get_produto()
+    {
+        return self::get_site_home() . '/produto/';
+    }
+
     static function get_pag()
     {
         if (isset($_GET['pag'])) {
             $pagina = $_GET['pag'];
             self::$pag = explode('/', $pagina);
             $pagina = 'controller/' . self::$pag[0] . '.php';
+            if (isset(self::$pag[1]) && self::$pag[1] != null) {
+                self::$pag_prod_id = self::$pag[1];
+            }
+            //var_dump(self::$pag_prod_id);
             if (file_exists($pagina)) {
                 include $pagina;
+                return self::$pag_prod_id;
             } else {
                 include '404.php';
             }
