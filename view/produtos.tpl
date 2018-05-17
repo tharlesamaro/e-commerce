@@ -4,7 +4,7 @@
             <div class="card">
                 <img class="card-img-top" src="{$base_url_img}{$p.prod_imagem}" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">{$p.prod_nome}</h4>
+                    <h4 class="card-title">{strtoupper($p.prod_nome)}</h4>
                     {if {$p.prod_promocao} eq 's' and {$p.prod_data_inicial_promocao} le date('Y-m-d') and {$p.prod_data_final_promocao} ge date('Y-m-d')}
                         <p class="text-danger card-text" id="preco">
                             <del>R$ {$p.prod_preco}</del>
@@ -42,4 +42,3 @@
         </li>
     </ul>
 </nav>
-

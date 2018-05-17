@@ -59,6 +59,7 @@ Class Rotas
         return $id;
     }
 
+    // implementação da url amigável (configurar também o apache2)
     static function get_pag()
     {
         if (isset($_GET['pag'])) {
