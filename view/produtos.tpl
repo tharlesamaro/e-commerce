@@ -26,7 +26,7 @@
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
         <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
+            <a class="page-link" href="{$pagina_anterior}" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 <span class="sr-only">Previous</span>
             </a>
@@ -35,7 +35,7 @@
             <li class="page-item"><a class="page-link" href="{$url_paginacao}{$foo + 1}">{$foo + 1}</a></li>
         {/for}
         <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
+            <a class="page-link" href="{$pagina_posterior}" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Next</span>
             </a>

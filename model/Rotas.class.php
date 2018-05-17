@@ -53,7 +53,8 @@ Class Rotas
                 include '404.php';
             }
         } else {
-            include 'controller/produtos.php';
+            //include 'controller/produtos.php';
+            header('Location: /ecommerce/produtos/1');
         }
     }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-16 18:55:56
+/* Smarty version 3.1.32, created on 2018-05-17 12:07:58
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afca8ec965638_21672115',
+  'unifunc' => 'content_5afd9ace2c3a89_77142913',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526507749,
+      1 => 1526569673,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afca8ec965638_21672115 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afd9ace2c3a89_77142913 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row text-center">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
@@ -71,7 +71,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
         <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
+            <a class="page-link" href="<?php echo $_smarty_tpl->tpl_vars['pagina_anterior']->value;?>
+" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 <span class="sr-only">Previous</span>
             </a>
@@ -89,7 +90,8 @@ echo $_smarty_tpl->tpl_vars['foo']->value+1;?>
 }
 ?>
         <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
+            <a class="page-link" href="<?php echo $_smarty_tpl->tpl_vars['pagina_posterior']->value;?>
+" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Next</span>
             </a>
