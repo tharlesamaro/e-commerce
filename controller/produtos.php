@@ -10,7 +10,7 @@ $smarty = new Template();
 $produtos = new Produtos();
 $produtos1 = new Produtos();
 
-$smarty->assign('base_url_img', Rotas::get_imagem_url());
+$smarty->assign('base_url_img', Rotas::get_imagem_produtos_url());
 $smarty->assign('produto', Rotas::get_produto());
 
 // Teste de paginação

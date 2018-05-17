@@ -8,20 +8,21 @@
 
 class Frete
 {
-    const CEP_ORIGEM = 20081902;
+    // const CEP_ORIGEM = 20081902;
+    // const FRETE = 40010;
 
     function __construct()
     {
         parent::__construct;
     }
 
-    static function calcular_frete($cep_destino, $peso, $preco, $frete, $altura = 6, $comprimento = 20, $largura = 20)
+    static function calcular_frete($cep_destino, $peso, $preco, $altura = 6, $comprimento = 20, $largura = 20)
     {
         $url = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?";
         $url .= "nCdEmpresa=";
         $url .= "&sDsSenha=";
-        $url .= "&nCdServico=" . $frete;
-        $url .= "&sCepOrigem=" . self::CEP_ORIGEM;
+        $url .= "&nCdServico=" . 40010;
+        $url .= "&sCepOrigem=" . 20081902;
         $url .= "&sCepDestino=" . $cep_destino;
         $url .= "&nVlPeso=" . $peso;
         $url .= "&nCdFormato=1";

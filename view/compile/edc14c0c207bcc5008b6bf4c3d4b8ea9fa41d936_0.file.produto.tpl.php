@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-17 14:46:23
+/* Smarty version 3.1.32, created on 2018-05-17 17:29:18
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afdbfef539b20_14998875',
+  'unifunc' => 'content_5afde61e055fe4_73320622',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526579178,
+      1 => 1526588952,
       2 => 'file',
     ),
   ),
@@ -20,20 +20,50 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afdbfef539b20_14998875 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afde61e055fe4_73320622 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
-    <div class="col-lg-3">
-        <h1 class="my-4">Calcular Frete</h1>
-        <div class="list-group">
-
-        </div>
-    </div>
-    <div class="col-lg-9">
-        <?php
+    <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 ?>
+        <div class="col-lg-3">
+            <div class="row">
+                <img class="img-caminhao-frete img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['base_url_img_root']->value;?>
+caminhao.svg" width="15%" height=""
+                     alt="">
+                <h3 class="my-4">Calcular Frete</h3>
+            </div>
+            <div class="list-group">
+                <form action="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+/produto/<?php echo $_smarty_tpl->tpl_vars['p']->value['pro_id'];?>
+" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="cep_destino" name="cep_destino" maxlength="8" minlength="8"
+                               placeholder="Ex: 60000000"
+                               required>
+                    </div>
+                    <!-- campos do tipo hidden -->
+                    <input type="text" id="prod_peso" name="prod_peso" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_peso'];?>
+" hidden>
+                    <input type="text" id="prod_preco" name="prod_preco" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_preco'];?>
+" hidden>
+                    <input type="text" id="prod_altura" name="prod_altura" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_altura'];?>
+" hidden>
+                    <input type="text" id="prod_comprimento" name="prod_comprimento" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_comprimento'];?>
+"
+                           hidden>
+                    <input type="text" id="prod_largura" name="prod_largura" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_largura'];?>
+" hidden>
+                    <input type="text" id="prod_id" name="prod_id" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
+" hidden>
+                    <!-- botão calcular -->
+                    <button class="btn btn-success form-control" type="submit"><i class="fa fa-calculator"></i> Calcular
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-9">
             <div class="card-produto-info card mt-4">
                 <img class="card-img-top img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['base_url_img']->value;
 echo $_smarty_tpl->tpl_vars['p']->value['prod_imagem'];?>
@@ -87,11 +117,11 @@ if ($_prefixVariable1 == 's' && $_prefixVariable2 <= date('Y-m-d') && $_prefixVa
             </div>
             <a href="#" class="produto-info-footer btn btn-success"><i class="fa fa-shopping-cart"></i> Comprar</a>
             <br>
-        <?php
+        </div>
+    <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-    </div>
 </div>
 <?php }
 }
