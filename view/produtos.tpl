@@ -2,7 +2,7 @@
     {foreach from=$produtos item=p}
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                <img class="card-img-top" src="{$base_url_img}{$p.prod_imagem}" alt="">
                 <div class="card-body">
                     <h4 class="card-title">{$p.prod_nome}</h4>
                     {if {$p.prod_promocao} eq 's' and {$p.prod_data_inicial_promocao} le date('Y-m-d') and {$p.prod_data_final_promocao} ge date('Y-m-d')}

@@ -10,4 +10,5 @@ $smarty = new Template();
 $produto = new Produtos();
 $produto->get_produto_by_id(Rotas::$pag[1]);
 $smarty->assign('produto', $produto->get_itens());
+$smarty->assign('base_url_img', Rotas::get_imagem_url());
 $smarty->display('produto.tpl');

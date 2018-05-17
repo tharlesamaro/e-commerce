@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-17 12:07:58
+/* Smarty version 3.1.32, created on 2018-05-17 14:21:04
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afd9ace2c3a89_77142913',
+  'unifunc' => 'content_5afdba0077e768_45440875',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526569673,
+      1 => 1526577311,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afd9ace2c3a89_77142913 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afdba0077e768_45440875 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row text-center">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
@@ -29,7 +29,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 ?>
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
-                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                <img class="card-img-top" src="<?php echo $_smarty_tpl->tpl_vars['base_url_img']->value;
+echo $_smarty_tpl->tpl_vars['p']->value['prod_imagem'];?>
+" alt="">
                 <div class="card-body">
                     <h4 class="card-title"><?php echo $_smarty_tpl->tpl_vars['p']->value['prod_nome'];?>
 </h4>

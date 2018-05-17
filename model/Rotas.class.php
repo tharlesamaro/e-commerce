@@ -41,6 +41,24 @@ Class Rotas
         return self::get_site_home() . '/produto/';
     }
 
+    static function get_imagem_pasta()
+    {
+        return 'assets/img/produtos/';
+    }
+
+    static function get_imagem_url()
+    {
+        return self::get_site_home() . '/' . self::get_imagem_pasta();
+    }
+
+    static function id_da_pagina_de_produtos($id)
+    {
+        if ($id <= 0 || $id == null) {
+            return 1;
+        }
+        return $id;
+    }
+
     static function get_pag()
     {
         if (isset($_GET['pag'])) {
