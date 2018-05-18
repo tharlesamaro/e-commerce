@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-18 12:45:14
+/* Smarty version 3.1.32, created on 2018-05-18 14:05:37
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afef50adea512_92103856',
+  'unifunc' => 'content_5aff07e147f373_99057505',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526658304,
+      1 => 1526663132,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afef50adea512_92103856 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aff07e147f373_99057505 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
@@ -172,9 +172,47 @@ if ($_prefixVariable9 == 1 && $_prefixVariable10 == 0) {?>
                     </div>
                 </div>
             <?php }?>
-            <a href="#" class="produto-info-footer btn btn-success"><i class="fa fa-shopping-cart"></i> Comprar</a>
+                        <button type="button" class="produto-info-footer btn btn-success" data-toggle="modal"
+                    data-target="#modalCompra"><i
+                        class="fa fa-shopping-cart"></i> Comprar
+            </button>
             <br>
-        </div>
+                        <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Conclusão de compra</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="nome">Nome:</label>
+                                    <input class="form-control" type="text" id="nome" name="nome" minlength="5"
+                                           maxlength="100" placeholder="Nome completo" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail:</label>
+                                    <input class="form-control" type="email" id="email" name="email"
+                                           placeholder="Ex: email@dominio.com" required>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                                                class="fa fa-window-close"></i> Cancelar
+                                    </button>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-credit-card"></i>
+                                        Comprar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
     <?php
 }
 }

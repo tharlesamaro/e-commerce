@@ -35,7 +35,7 @@ if (isset($_POST['prod_id'])) {
 
     $frete = [
         'frete_codigo' => $xml_frete->Codigo,
-        'frete_valor' => str_replace(',', '.', $xml_frete->Valor),
+        'frete_valor' => $xml_frete->Valor,
         'frete_prazo_entrega' => $xml_frete->PrazoEntrega,
         'frete_valor_mao_propria' => $xml_frete->ValorMaoPropria,
         'frete_valor_valor_aviso_recebimento' => $xml_frete->ValorAvisoRecebimento,
@@ -46,7 +46,7 @@ if (isset($_POST['prod_id'])) {
         'frete_mensagem_erro' => $xml_frete->MsgErro
     ];
 
-    $valor_total_produto =  $prod_preco + $frete['frete_valor'];
+    $valor_total_produto =  $prod_preco + str_replace(',', '.', $frete['frete_valor']);
 
     $smarty->assign('frete_prazo', $frete['frete_prazo_entrega']);
     $smarty->assign('frete_valor', $frete['frete_valor']);

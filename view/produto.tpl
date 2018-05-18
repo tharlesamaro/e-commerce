@@ -94,8 +94,49 @@
                     </div>
                 </div>
             {/if}
-            <a href="#" class="produto-info-footer btn btn-success"><i class="fa fa-shopping-cart"></i> Comprar</a>
+            {* botão de compra para chamar o modal*}
+            <button type="button" class="produto-info-footer btn btn-success" data-toggle="modal"
+                    data-target="#modalCompra"><i
+                        class="fa fa-shopping-cart"></i> Comprar
+            </button>
             <br>
+            {*inicio modal*}
+            <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Conclusão de compra</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="nome">Nome:</label>
+                                    <input class="form-control" type="text" id="nome" name="nome" minlength="5"
+                                           maxlength="100" placeholder="Nome completo" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail:</label>
+                                    <input class="form-control" type="email" id="email" name="email"
+                                           placeholder="Ex: email@dominio.com" required>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                                                class="fa fa-window-close"></i> Cancelar
+                                    </button>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-credit-card"></i>
+                                        Comprar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {*fim modal*}
         </div>
     {/foreach}
 </div>
