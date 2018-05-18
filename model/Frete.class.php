@@ -8,9 +8,6 @@
 
 class Frete
 {
-    // const CEP_ORIGEM = 20081902;
-    // const FRETE = 40010;
-
     function __construct()
     {
         parent::__construct;

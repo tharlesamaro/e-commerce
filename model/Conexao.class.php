@@ -27,7 +27,7 @@ Class Conexao extends Config
                 $this->connect();
             }
         } catch (Exception $error) {
-            exit($error->getMessage() . " <h4>Erro ao conectar com o banco de dados</h4>");
+            exit($error->getMessage() . " <h4> Erro ao conectar com o banco de dados</h4>");
         }
     }
 

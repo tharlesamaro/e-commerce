@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-16 15:38:55
+/* Smarty version 3.1.32, created on 2018-05-18 10:27:45
   from '/var/www/html/ecommerce/view/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afc7abfa0c529_24068581',
+  'unifunc' => 'content_5afed4d1a7f296_15931475',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cff7f739282368a633973b96f8ed9aefc2f1b29a' => 
     array (
       0 => '/var/www/html/ecommerce/view/index.tpl',
-      1 => 1526495928,
+      1 => 1526600973,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afc7abfa0c529_24068581 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afed4d1a7f296_15931475 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
 <head>
@@ -99,7 +99,6 @@ function content_5afc7abfa0c529_24068581 (Smarty_Internal_Template $_smarty_tpl)
         Rotas::get_pag();
     ?>
 </div>
-
-                </body>
+</body>
 </html><?php }
 }

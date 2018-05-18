@@ -9,23 +9,40 @@
             <div class="list-group">
                 <form action="{$base_url}/produto/{$p.pro_id}" method="post">
                     <div class="form-group">
-                        <input class="form-control" type="text" id="cep_destino" name="cep_destino" maxlength="8" minlength="8"
+                        <input class="form-control" type="text" id="cep_destino" name="cep_destino" maxlength="8"
+                               minlength="8"
                                placeholder="Ex: 60000000"
                                required>
                     </div>
-                    <!-- campos do tipo hidden -->
+                    {*campos do tipo hidden*}
                     <input type="text" id="prod_peso" name="prod_peso" value="{$p.prod_peso}" hidden>
-                    <input type="text" id="prod_preco" name="prod_preco" value="{$p.prod_preco}" hidden>
+                    {if {$p.prod_promocao} eq 's' and {$p.prod_data_inicial_promocao} le date('Y-m-d') and {$p.prod_data_final_promocao} ge date('Y-m-d')}
+                        <input type="text" id="prod_preco" name="prod_preco" value="{$p.prod_preco_promocao}" hidden>
+                    {else}
+                        <input type="text" id="prod_preco" name="prod_preco" value="{$p.prod_preco}" hidden>
+                    {/if}
                     <input type="text" id="prod_altura" name="prod_altura" value="{$p.prod_altura}" hidden>
                     <input type="text" id="prod_comprimento" name="prod_comprimento" value="{$p.prod_comprimento}"
                            hidden>
                     <input type="text" id="prod_largura" name="prod_largura" value="{$p.prod_largura}" hidden>
                     <input type="text" id="prod_id" name="prod_id" value="{$p.prod_id}" hidden>
-                    <!-- botão calcular -->
+                    {*botão calcular*}
                     <button class="btn btn-success form-control" type="submit"><i class="fa fa-calculator"></i> Calcular
                     </button>
                 </form>
             </div>
+            {if {$mostrar_calculo_frete} eq 1}
+                <div class="frete-resultado">
+                    <ul class="list-group">
+                        {if {$frete_codigo_erro} eq 0}
+                            <li class="list-inline-item">Frete: R$ {$frete_valor}</li>
+                            <li class="list-inline-item">Entrega: {$frete_prazo} dias úteis</li>
+                        {else}
+                            <li class="list-group-item-danger">Erro: {$frete_mensagem_erro}</li>
+                        {/if}
+                    </ul>
+                </div>
+            {/if}
         </div>
         <div class="col-lg-9">
             <div class="card-produto-info card mt-4">

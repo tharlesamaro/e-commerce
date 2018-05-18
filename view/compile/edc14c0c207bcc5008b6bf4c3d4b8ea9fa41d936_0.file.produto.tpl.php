@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-17 17:29:18
+/* Smarty version 3.1.32, created on 2018-05-18 12:27:14
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afde61e055fe4_73320622',
+  'unifunc' => 'content_5afef0d2c33d71_21320894',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526588952,
+      1 => 1526657224,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afde61e055fe4_73320622 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afef0d2c33d71_21320894 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
@@ -39,15 +39,29 @@ caminhao.svg" width="15%" height=""
 /produto/<?php echo $_smarty_tpl->tpl_vars['p']->value['pro_id'];?>
 " method="post">
                     <div class="form-group">
-                        <input class="form-control" type="text" id="cep_destino" name="cep_destino" maxlength="8" minlength="8"
+                        <input class="form-control" type="text" id="cep_destino" name="cep_destino" maxlength="8"
+                               minlength="8"
                                placeholder="Ex: 60000000"
                                required>
                     </div>
-                    <!-- campos do tipo hidden -->
-                    <input type="text" id="prod_peso" name="prod_peso" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_peso'];?>
+                                        <input type="text" id="prod_peso" name="prod_peso" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_peso'];?>
 " hidden>
-                    <input type="text" id="prod_preco" name="prod_preco" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_preco'];?>
+                    <?php ob_start();
+echo $_smarty_tpl->tpl_vars['p']->value['prod_promocao'];
+$_prefixVariable1 = ob_get_clean();
+ob_start();
+echo $_smarty_tpl->tpl_vars['p']->value['prod_data_inicial_promocao'];
+$_prefixVariable2 = ob_get_clean();
+ob_start();
+echo $_smarty_tpl->tpl_vars['p']->value['prod_data_final_promocao'];
+$_prefixVariable3 = ob_get_clean();
+if ($_prefixVariable1 == 's' && $_prefixVariable2 <= date('Y-m-d') && $_prefixVariable3 >= date('Y-m-d')) {?>
+                        <input type="text" id="prod_preco" name="prod_preco" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_preco_promocao'];?>
 " hidden>
+                    <?php } else { ?>
+                        <input type="text" id="prod_preco" name="prod_preco" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_preco'];?>
+" hidden>
+                    <?php }?>
                     <input type="text" id="prod_altura" name="prod_altura" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_altura'];?>
 " hidden>
                     <input type="text" id="prod_comprimento" name="prod_comprimento" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_comprimento'];?>
@@ -57,11 +71,31 @@ caminhao.svg" width="15%" height=""
 " hidden>
                     <input type="text" id="prod_id" name="prod_id" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
 " hidden>
-                    <!-- botão calcular -->
-                    <button class="btn btn-success form-control" type="submit"><i class="fa fa-calculator"></i> Calcular
+                                        <button class="btn btn-success form-control" type="submit"><i class="fa fa-calculator"></i> Calcular
                     </button>
                 </form>
             </div>
+            <?php ob_start();
+echo $_smarty_tpl->tpl_vars['mostrar_calculo_frete']->value;
+$_prefixVariable4 = ob_get_clean();
+if ($_prefixVariable4 == 1) {?>
+                <div class="frete-resultado">
+                    <ul class="list-group">
+                        <?php ob_start();
+echo $_smarty_tpl->tpl_vars['frete_codigo_erro']->value;
+$_prefixVariable5 = ob_get_clean();
+if ($_prefixVariable5 == 0) {?>
+                            <li class="list-inline-item">Frete: R$ <?php echo $_smarty_tpl->tpl_vars['frete_valor']->value;?>
+</li>
+                            <li class="list-inline-item">Entrega: <?php echo $_smarty_tpl->tpl_vars['frete_prazo']->value;?>
+ dias úteis</li>
+                        <?php } else { ?>
+                            <li class="list-group-item-danger">Erro: <?php echo $_smarty_tpl->tpl_vars['frete_mensagem_erro']->value;?>
+</li>
+                        <?php }?>
+                    </ul>
+                </div>
+            <?php }?>
         </div>
         <div class="col-lg-9">
             <div class="card-produto-info card mt-4">
@@ -73,14 +107,14 @@ echo $_smarty_tpl->tpl_vars['p']->value['prod_imagem'];?>
 </h3>
                     <?php ob_start();
 echo $_smarty_tpl->tpl_vars['p']->value['prod_promocao'];
-$_prefixVariable1 = ob_get_clean();
+$_prefixVariable6 = ob_get_clean();
 ob_start();
 echo $_smarty_tpl->tpl_vars['p']->value['prod_data_inicial_promocao'];
-$_prefixVariable2 = ob_get_clean();
+$_prefixVariable7 = ob_get_clean();
 ob_start();
 echo $_smarty_tpl->tpl_vars['p']->value['prod_data_final_promocao'];
-$_prefixVariable3 = ob_get_clean();
-if ($_prefixVariable1 == 's' && $_prefixVariable2 <= date('Y-m-d') && $_prefixVariable3 >= date('Y-m-d')) {?>
+$_prefixVariable8 = ob_get_clean();
+if ($_prefixVariable6 == 's' && $_prefixVariable7 <= date('Y-m-d') && $_prefixVariable8 >= date('Y-m-d')) {?>
                         <h4 class="text-danger card-text" id="preco">
                             <del>R$ <?php echo $_smarty_tpl->tpl_vars['p']->value['prod_preco'];?>
 </del>

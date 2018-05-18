@@ -47,11 +47,6 @@
         Rotas::get_pag();
     {/php}
 </div>
-
-{*<footer class="py-5 bg-dark">*}
-    {*<div class="container">*}
-        {*<p class="m-0 text-center text-white">Copyright &copy; Tharles Amaro 2018</p>*}
-    {*</div>*}
-{*</footer>*}
+{*implementar footer aqui*}
 </body>
 </html>
