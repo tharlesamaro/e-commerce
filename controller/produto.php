@@ -25,13 +25,14 @@ $mostrar_calculo_frete = 0;
 
 if (isset($_POST['prod_id'])) {
     $cep_destino = $_POST['cep_destino'];
+    $servico = $_POST['tipo_de_frete'];
     $prod_peso = $_POST['prod_peso'];
     $prod_preco = $_POST['prod_preco'];
     $prod_altura = $_POST['prod_altura'];
     $prod_comprimento = $_POST['prod_comprimento'];
     $prod_largura = $_POST['prod_largura'];
 
-    $xml_frete = Frete::calcular_frete($cep_destino, $prod_peso, $prod_preco, $prod_altura, $prod_comprimento, $prod_largura);
+    $xml_frete = Frete::calcular_frete($cep_destino, $servico, $prod_peso, $prod_preco, $prod_altura, $prod_comprimento, $prod_largura);
 
     $frete = [
         'frete_codigo' => $xml_frete->Codigo,
@@ -46,6 +47,7 @@ if (isset($_POST['prod_id'])) {
         'frete_mensagem_erro' => $xml_frete->MsgErro
     ];
 
+    $frete_escolhido = ($_POST['tipo_de_frete'] == 40010) ? 'SEDEX' : 'PAC';
     $valor_total_produto =  $prod_preco + str_replace(',', '.', $frete['frete_valor']);
 
     $smarty->assign('frete_prazo', $frete['frete_prazo_entrega']);
@@ -53,6 +55,8 @@ if (isset($_POST['prod_id'])) {
     $smarty->assign('frete_codigo_erro', $frete['frete_codigo_erro']);
     $smarty->assign('frete_mensagem_erro', $frete['frete_mensagem_erro']);
     $smarty->assign('valor_total_produto', $valor_total_produto);
+    $smarty->assign('tipo_de_frete', $frete_escolhido);
+    $smarty->assign('cep_destino', $cep_destino);
 
     $mostrar_calculo_frete = 1;
 

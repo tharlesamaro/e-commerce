@@ -16,5 +16,14 @@ Class Config
     const DB_USER = "tharles";
     const DB_PASSWORD = "12345678";
     const DB_DATABASE = "ecommerce";
+
+    const EMAIL_HOST = "smtp.gmail.com";
+    const EMAIL_USER = "tecommerce.tharles@gmail.com";
+    const EMAIL_PASSWORD = "Ecommerce2018";
+    const EMAIL_SMTPSECURE = "tls";
+    const EMAIL_PORT = 587;
+    const EMAIL_FROM = "tharlesamaro@gmail.com";
+    const EMAIL_FROM_NAME = "Tharles Amaro";
+    const EMAIL_INFORMATION = "Nova compra efetuada!";
 }
 

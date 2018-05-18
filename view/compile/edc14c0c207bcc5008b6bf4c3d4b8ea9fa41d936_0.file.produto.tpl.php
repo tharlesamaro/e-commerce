@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-18 14:05:37
+/* Smarty version 3.1.32, created on 2018-05-18 16:56:36
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5aff07e147f373_99057505',
+  'unifunc' => 'content_5aff2ff4e0b123_19513573',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526663132,
+      1 => 1526673237,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5aff07e147f373_99057505 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aff2ff4e0b123_19513573 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
@@ -39,10 +39,18 @@ caminhao.svg" width="15%" height=""
 /produto/<?php echo $_smarty_tpl->tpl_vars['p']->value['pro_id'];?>
 " method="post">
                     <div class="form-group">
+                        <label for="cep_destino">CEP:</label>
                         <input class="form-control" type="text" id="cep_destino" name="cep_destino" maxlength="8"
                                minlength="8"
                                placeholder="Ex: 60000000"
                                required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo_de_frete">Tipo de frete:</label>
+                        <select class="form-control" name="tipo_de_frete" id="tipo_de_frete" required>
+                            <option selected value="40010">SEDEX</option>
+                            <option value="41106">PAC</option>
+                        </select>
                     </div>
                                         <input type="text" id="prod_peso" name="prod_peso" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_peso'];?>
 " hidden>
@@ -85,10 +93,12 @@ if ($_prefixVariable4 == 1) {?>
 echo $_smarty_tpl->tpl_vars['frete_codigo_erro']->value;
 $_prefixVariable5 = ob_get_clean();
 if ($_prefixVariable5 == 0) {?>
-                            <li class="list-inline-item">Frete: R$ <?php echo $_smarty_tpl->tpl_vars['frete_valor']->value;?>
+                            <li class="list-inline-item">Valor do frete: R$ <?php echo $_smarty_tpl->tpl_vars['frete_valor']->value;?>
 </li>
                             <li class="list-inline-item">Entrega: <?php echo $_smarty_tpl->tpl_vars['frete_prazo']->value;?>
  dias úteis</li>
+                            <li class="list-inline-item">Frete escolhido: <?php echo $_smarty_tpl->tpl_vars['tipo_de_frete']->value;?>
+</li>
                         <?php } else { ?>
                             <li class="list-group-item-danger">Erro: <?php echo $_smarty_tpl->tpl_vars['frete_mensagem_erro']->value;?>
 </li>
@@ -125,9 +135,9 @@ if ($_prefixVariable6 == 's' && $_prefixVariable7 <= date('Y-m-d') && $_prefixVa
                         <h4 class="card-text text-success">R$ <?php echo $_smarty_tpl->tpl_vars['p']->value['prod_preco'];?>
 </h4>
                     <?php }?>
-                                        <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['p']->value['prod_descricao'];?>
+                    <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['p']->value['prod_descricao'];?>
 </p>
-                                                        </div>
+                </div>
             </div>
             <!-- /.card -->
             <div class="card-produto-info card card-outline-secondary my-4">
@@ -172,47 +182,80 @@ if ($_prefixVariable9 == 1 && $_prefixVariable10 == 0) {?>
                     </div>
                 </div>
             <?php }?>
+
                         <button type="button" class="produto-info-footer btn btn-success" data-toggle="modal"
                     data-target="#modalCompra"><i
                         class="fa fa-shopping-cart"></i> Comprar
             </button>
             <br>
-                        <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Conclusão de compra</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <label for="nome">Nome:</label>
-                                    <input class="form-control" type="text" id="nome" name="nome" minlength="5"
-                                           maxlength="100" placeholder="Nome completo" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">E-mail:</label>
-                                    <input class="form-control" type="email" id="email" name="email"
-                                           placeholder="Ex: email@dominio.com" required>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                                                class="fa fa-window-close"></i> Cancelar
-                                    </button>
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-credit-card"></i>
-                                        Comprar
-                                    </button>
-                                </div>
-                            </form>
+
+            <?php ob_start();
+echo $_smarty_tpl->tpl_vars['mostrar_calculo_frete']->value;
+$_prefixVariable11 = ob_get_clean();
+if ($_prefixVariable11 == 1) {?>
+                                <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Conclusão de compra</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+/compra" method="post">
+                                    <div class="form-group">
+                                        <label for="nome">Nome:</label>
+                                        <input class="form-control" type="text" id="nome" name="nome" minlength="5"
+                                               maxlength="100" placeholder="Nome completo" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">E-mail:</label>
+                                        <input class="form-control" type="email" id="email" name="email"
+                                               placeholder="Ex: email@dominio.com" required>
+                                    </div>
+                                                                        <input type="hidden" id="prod_nome" name="prod_nome" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_nome'];?>
+" hidden>
+                                    <input type="hidden" id="valor_total" name="valor_total" value="<?php echo $_smarty_tpl->tpl_vars['valor_total_produto']->value;?>
+" hidden>
+                                    <input type="hidden" id="cep_destino" name="cep_destino" value="<?php echo $_smarty_tpl->tpl_vars['cep_destino']->value;?>
+" hidden>
+                                                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                                                    class="fa fa-window-close"></i> Cancelar
+                                        </button>
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-credit-card"></i>
+                                            Comprar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php } else { ?>
+                                <div class="modal" id="modalCompra" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> IMPORTANTE</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Por favor! Calcule o frete antes de finalizar sua compra!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            <?php }?>
+        </div>
     <?php
 }
 }
