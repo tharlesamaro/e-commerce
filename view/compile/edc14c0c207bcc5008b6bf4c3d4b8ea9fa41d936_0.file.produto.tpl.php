@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-18 16:56:36
+/* Smarty version 3.1.32, created on 2018-05-18 20:21:04
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5aff2ff4e0b123_19513573',
+  'unifunc' => 'content_5aff5fe01e1ef5_89108083',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526673237,
+      1 => 1526682397,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5aff2ff4e0b123_19513573 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aff5fe01e1ef5_89108083 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
@@ -28,7 +28,7 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 ?>
         <div class="col-lg-3">
-            <div class="row">
+                        <div class="row">
                 <img class="img-caminhao-frete img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['base_url_img_root']->value;?>
 caminhao.svg" width="15%" height=""
                      alt="">
@@ -106,8 +106,8 @@ if ($_prefixVariable5 == 0) {?>
                     </ul>
                 </div>
             <?php }?>
-        </div>
-        <div class="col-lg-9">
+                    </div>
+                <div class="col-lg-9">
             <div class="card-produto-info card mt-4">
                 <img class="card-img-top img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['base_url_img']->value;
 echo $_smarty_tpl->tpl_vars['p']->value['prod_imagem'];?>
@@ -139,7 +139,7 @@ if ($_prefixVariable6 == 's' && $_prefixVariable7 <= date('Y-m-d') && $_prefixVa
 </p>
                 </div>
             </div>
-            <!-- /.card -->
+
             <div class="card-produto-info card card-outline-secondary my-4">
                 <div class="card-header">
                     Outras Informações:
@@ -167,7 +167,6 @@ ob_start();
 echo $_smarty_tpl->tpl_vars['frete_codigo_erro']->value;
 $_prefixVariable10 = ob_get_clean();
 if ($_prefixVariable9 == 1 && $_prefixVariable10 == 0) {?>
-                <!-- /.card informações finais -->
                 <div class="card-produto-info card card-outline-secondary my-4">
                     <div class="card-header">
                         Informações da compra:
@@ -218,10 +217,12 @@ if ($_prefixVariable11 == 1) {?>
                                     </div>
                                                                         <input type="hidden" id="prod_nome" name="prod_nome" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_nome'];?>
 " hidden>
-                                    <input type="hidden" id="valor_total" name="valor_total" value="<?php echo $_smarty_tpl->tpl_vars['valor_total_produto']->value;?>
+                                    <input type="hidden" id="valor_total" name="valor_total"
+                                           value="<?php echo $_smarty_tpl->tpl_vars['valor_total_produto']->value;?>
 " hidden>
                                     <input type="hidden" id="cep_destino" name="cep_destino" value="<?php echo $_smarty_tpl->tpl_vars['cep_destino']->value;?>
-" hidden>
+"
+                                           hidden>
                                                                         <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal"><i
                                                     class="fa fa-window-close"></i> Cancelar
@@ -254,9 +255,9 @@ if ($_prefixVariable11 == 1) {?>
                         </div>
                     </div>
                 </div>
-            <?php }?>
+                            <?php }?>
         </div>
-    <?php
+            <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>

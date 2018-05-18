@@ -1,6 +1,7 @@
 <div class="row">
     {foreach from=$produto item=p}
         <div class="col-lg-3">
+            {* frete *}
             <div class="row">
                 <img class="img-caminhao-frete img-fluid" src="{$base_url_img_root}caminhao.svg" width="15%" height=""
                      alt="">
@@ -22,7 +23,7 @@
                             <option value="41106">PAC</option>
                         </select>
                     </div>
-                    {*campos do tipo hidden*}
+                    {* campos do tipo hidden *}
                     <input type="text" id="prod_peso" name="prod_peso" value="{$p.prod_peso}" hidden>
                     {if {$p.prod_promocao} eq 's' and {$p.prod_data_inicial_promocao} le date('Y-m-d') and {$p.prod_data_final_promocao} ge date('Y-m-d')}
                         <input type="text" id="prod_preco" name="prod_preco" value="{$p.prod_preco_promocao}" hidden>
@@ -34,7 +35,7 @@
                            hidden>
                     <input type="text" id="prod_largura" name="prod_largura" value="{$p.prod_largura}" hidden>
                     <input type="text" id="prod_id" name="prod_id" value="{$p.prod_id}" hidden>
-                    {*botão calcular*}
+                    {* botão calcular *}
                     <button class="btn btn-success form-control" type="submit"><i class="fa fa-calculator"></i> Calcular
                     </button>
                 </form>
@@ -52,7 +53,9 @@
                     </ul>
                 </div>
             {/if}
+            {* /frete *}
         </div>
+        {*Produto - Detalhes*}
         <div class="col-lg-9">
             <div class="card-produto-info card mt-4">
                 <img class="card-img-top img-fluid" src="{$base_url_img}{$p.prod_imagem}" alt="">
@@ -69,7 +72,7 @@
                     <p class="card-text">{$p.prod_descricao}</p>
                 </div>
             </div>
-            <!-- /.card -->
+
             <div class="card-produto-info card card-outline-secondary my-4">
                 <div class="card-header">
                     Outras Informações:
@@ -87,7 +90,6 @@
             </div>
 
             {if {$mostrar_calculo_frete} eq 1 and {$frete_codigo_erro} eq 0}
-                <!-- /.card informações finais -->
                 <div class="card-produto-info card card-outline-secondary my-4">
                     <div class="card-header">
                         Informações da compra:
@@ -101,7 +103,7 @@
                 </div>
             {/if}
 
-            {* botão de compra para chamar o modal*}
+            {* botão de compra para chamar o modal *}
             <button type="button" class="produto-info-footer btn btn-success" data-toggle="modal"
                     data-target="#modalCompra"><i
                         class="fa fa-shopping-cart"></i> Comprar
@@ -109,7 +111,7 @@
             <br>
 
             {if {$mostrar_calculo_frete} eq 1}
-                {*Modal para finalizar a compra caso já tenha feito o calculo do frete*}
+                {* Modal para finalizar a compra caso já tenha feito o calculo do frete *}
                 <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -132,11 +134,13 @@
                                         <input class="form-control" type="email" id="email" name="email"
                                                placeholder="Ex: email@dominio.com" required>
                                     </div>
-                                    {* campos hidden*}
+                                    {* campos hidden *}
                                     <input type="hidden" id="prod_nome" name="prod_nome" value="{$p.prod_nome}" hidden>
-                                    <input type="hidden" id="valor_total" name="valor_total" value="{$valor_total_produto}" hidden>
-                                    <input type="hidden" id="cep_destino" name="cep_destino" value="{$cep_destino}" hidden>
-                                    {* /campos hidden*}
+                                    <input type="hidden" id="valor_total" name="valor_total"
+                                           value="{$valor_total_produto}" hidden>
+                                    <input type="hidden" id="cep_destino" name="cep_destino" value="{$cep_destino}"
+                                           hidden>
+                                    {* /campos hidden *}
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal"><i
                                                     class="fa fa-window-close"></i> Cancelar
@@ -151,7 +155,7 @@
                     </div>
                 </div>
             {else}
-                {*Modal de aviso para calcular o frete antes de finalizar a comra*}
+                {* Modal de aviso para calcular o frete antes de finalizar a comra *}
                 <div class="modal" id="modalCompra" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -170,7 +174,9 @@
                         </div>
                     </div>
                 </div>
+                {* /modal *}
             {/if}
         </div>
+        {* /Produto - Detalhes *}
     {/foreach}
 </div>

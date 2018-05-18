@@ -1,4 +1,13 @@
 <div class="row text-center">
+
+    {if $smarty.session.sucesso}
+        <div class="alert-success text-center"><h4>PRODUTO COMPRADO COM SUCESSO! Verifique seu e-mail!</h4></div>
+    {/if}
+
+    {if $smarty.session.erro}
+        <h1>Houve um erro ao efetuar sua compra! Entre em contato com o nosso suporte!</h1>
+    {/if}
+
     {foreach from=$produtos item=p}
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-17 14:37:32
+/* Smarty version 3.1.32, created on 2018-05-18 20:23:39
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afdbddc2fe936_12674185',
+  'unifunc' => 'content_5aff607b67f517_96439580',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526578649,
+      1 => 1526685817,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afdbddc2fe936_12674185 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5aff607b67f517_96439580 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row text-center">
+
+    <?php if ($_SESSION['sucesso']) {?>
+        <div class="alert-success text-center"><h4>PRODUTO COMPRADO COM SUCESSO! Verifique seu e-mail!</h4></div>
+    <?php }?>
+
+    <?php if ($_SESSION['erro']) {?>
+        <h1>Houve um erro ao efetuar sua compra! Entre em contato com o nosso suporte!</h1>
+    <?php }?>
+
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
 if ($_from !== null) {

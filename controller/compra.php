@@ -6,6 +6,8 @@
  * Time: 15:10
  */
 
+session_start();
+
 $smarty = new Template();
 
 $email_comprador = $_POST['email'];
@@ -13,6 +15,8 @@ $nome_comprador = $_POST['nome'];
 $nome_produto = $_POST['prod_nome'];
 $valor_da_compra = $_POST['valor_total'];
 $cep_destino = $_POST['cep_destino'];
+
+//$smarty->assign('base_url_img', Rotas::get_imagem_geral_url());
 
 ### IMPLEMENTAÇÃO DO ENVIO DE EMAIL ###
 
@@ -35,7 +39,7 @@ try {
     $mail->setFrom(Config::EMAIL_FROM, Config::EMAIL_FROM_NAME);
     $mail->addAddress($email_comprador, $nome_comprador);   // Add a recipient | Name is optional
     $mail->addReplyTo(Config::EMAIL_FROM, Config::EMAIL_INFORMATION);
-    //$mail->addCC('cc@example.com');
+    $mail->addCC('tharlesamaro@gmail.com');
     //$mail->addBCC('bcc@example.com');
 
     //Attachments
@@ -45,14 +49,35 @@ try {
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Nova compra efetuada!';
-    $mail->Body = '<b>Compra efetuada com sucesso! ' . '<br><br>Cliente: ' . $nome_comprador . '<br>Email: ' . $email_comprador .'<br>Produto: ' . $nome_produto . '<br>Valor da compra(frete incluso): ' . $valor_da_compra . '<br>CEP Destino: ' . $cep_destino;
+    $mail->Body = '<b>Compra efetuada com sucesso! ' . '<br><br>Cliente: ' . $nome_comprador . '<br>Email: ' . $email_comprador . '<br>Produto: ' . $nome_produto . '<br>Valor(frete incluso): R$ ' . $valor_da_compra . '<br>CEP Destino: ' . $cep_destino;
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    $mail->send();
+    $mail->send(); // enviando email
 
-    $smarty->assign('email_mensagem', 'Compra efetuada com sucesso! Obrigado por comprar em nossa loja! Volte sempre!');
-    $smarty->display('compra_finalizada.tpl');
+    // TESTE COM SESSÂO
+
+
+    $_SESSION['sucesso'] = true;
+    header("Location: produtos/1");
+    die();
+
+    // /TESTE COM SESSÃO
+
+//    $smarty->assign('email_mensagem', 'Compra efetuada com sucesso! Obrigado por comprar em nossa loja! Volte sempre!');
+//    $smarty->assign('imagem', 'sucesso.svg');
+//    $smarty->display('compra_finalizada.tpl');
 } catch (Exception $e) {
-    $smarty->assign('email_mensagem,', 'Erro ao finalizar sua compra! Por favor entre em contato com o nosso suporte!');
-    $smarty->display('compra_finalizada.tpl');
+
+    // TESTE COM SESSÂO
+
+
+    $_SESSION['erro'] = true;
+    header("Location: produtos/1");
+    die();
+
+    // /TESTE COM SESSÃO
+
+//    $smarty->assign('email_mensagem,', 'Erro ao finalizar sua compra! Por favor entre em contato com o nosso suporte!');
+//    $smarty->assign('imagem', 'erro.svg');
+//    $smarty->display('compra_finalizada.tpl');
 }
