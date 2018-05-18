@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-18 12:27:14
+/* Smarty version 3.1.32, created on 2018-05-18 12:45:14
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5afef0d2c33d71_21320894',
+  'unifunc' => 'content_5afef50adea512_92103856',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526657224,
+      1 => 1526658304,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5afef0d2c33d71_21320894 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5afef50adea512_92103856 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
@@ -149,6 +149,29 @@ if ($_prefixVariable6 == 's' && $_prefixVariable7 <= date('Y-m-d') && $_prefixVa
                     <hr>
                 </div>
             </div>
+
+            <?php ob_start();
+echo $_smarty_tpl->tpl_vars['mostrar_calculo_frete']->value;
+$_prefixVariable9 = ob_get_clean();
+ob_start();
+echo $_smarty_tpl->tpl_vars['frete_codigo_erro']->value;
+$_prefixVariable10 = ob_get_clean();
+if ($_prefixVariable9 == 1 && $_prefixVariable10 == 0) {?>
+                <!-- /.card informações finais -->
+                <div class="card-produto-info card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Informações da compra:
+                    </div>
+                    <div class="card-produto-info card-body">
+                        <p>Valor total da compra: R$ <?php echo $_smarty_tpl->tpl_vars['valor_total_produto']->value;?>
+</p>
+                        <hr>
+                        <p>Prazo para entrega: <?php echo $_smarty_tpl->tpl_vars['frete_prazo']->value;?>
+ dias úteis</p>
+                        <hr>
+                    </div>
+                </div>
+            <?php }?>
             <a href="#" class="produto-info-footer btn btn-success"><i class="fa fa-shopping-cart"></i> Comprar</a>
             <br>
         </div>

@@ -79,6 +79,21 @@
                     <hr>
                 </div>
             </div>
+
+            {if {$mostrar_calculo_frete} eq 1 and {$frete_codigo_erro} eq 0}
+                <!-- /.card informações finais -->
+                <div class="card-produto-info card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Informações da compra:
+                    </div>
+                    <div class="card-produto-info card-body">
+                        <p>Valor total da compra: R$ {$valor_total_produto}</p>
+                        <hr>
+                        <p>Prazo para entrega: {$frete_prazo} dias úteis</p>
+                        <hr>
+                    </div>
+                </div>
+            {/if}
             <a href="#" class="produto-info-footer btn btn-success"><i class="fa fa-shopping-cart"></i> Comprar</a>
             <br>
         </div>
