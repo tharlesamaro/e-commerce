@@ -34,7 +34,7 @@ try {
     $mail->addReplyTo(Config::EMAIL_ADMIN, Config::EMAIL_INFORMATION);
     $mail->addCC(Config::EMAIL_ADMIN);
     # Conteúdo
-    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->isHTML(true);
     $mail->Subject = 'Nova compra efetuada!';
     $mail->Body = '<b>Compra efetuada com sucesso!</b> ' . '<br><br><b>Cliente:</b> ' . $cliente_nome . '<br><b>Email:</b> ' . $cliente_email . '<br><b>Produto:</b> ' . $produto_nome . '<br><b>Valor total:</b> R$ ' . $produto_valor_total . '<br><b>CEP Destino:</b> ' . $cliente_cep;
     $mail->send();
