@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-18 20:23:39
+/* Smarty version 3.1.32, created on 2018-05-19 02:02:04
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5aff607b67f517_96439580',
+  'unifunc' => 'content_5affafcc063397_84187700',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526685817,
+      1 => 1526704175,
       2 => 'file',
     ),
   ),
@@ -20,18 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5aff607b67f517_96439580 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5affafcc063397_84187700 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row text-center">
-
-    <?php if ($_SESSION['sucesso']) {?>
-        <div class="alert-success text-center"><h4>PRODUTO COMPRADO COM SUCESSO! Verifique seu e-mail!</h4></div>
+        <?php if ($_SESSION['sucesso']) {?>
+        <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
     <?php }?>
-
     <?php if ($_SESSION['erro']) {?>
-        <h1>Houve um erro ao efetuar sua compra! Entre em contato com o nosso suporte!</h1>
+        <div><p class="alert-danger text-center">Erro ao efetuar compra! Entre em contato conosco.</p>
     <?php }?>
-
-    <?php
+            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
@@ -77,18 +74,17 @@ echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-</div>
-
+    </div>
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-        <li class="page-item">
+                <li class="page-item">
             <a class="page-link" href="<?php echo $_smarty_tpl->tpl_vars['pagina_anterior']->value;?>
 " aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 <span class="sr-only">Previous</span>
             </a>
         </li>
-        <?php
+                        <?php
 $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['foo']->step = 1;$_smarty_tpl->tpl_vars['foo']->total = (int) ceil(($_smarty_tpl->tpl_vars['foo']->step > 0 ? $_smarty_tpl->tpl_vars['numero_de_paginas']->value+1 - (0) : 0-($_smarty_tpl->tpl_vars['numero_de_paginas']->value)+1)/abs($_smarty_tpl->tpl_vars['foo']->step));
 if ($_smarty_tpl->tpl_vars['foo']->total > 0) {
 for ($_smarty_tpl->tpl_vars['foo']->value = 0, $_smarty_tpl->tpl_vars['foo']->iteration = 1;$_smarty_tpl->tpl_vars['foo']->iteration <= $_smarty_tpl->tpl_vars['foo']->total;$_smarty_tpl->tpl_vars['foo']->value += $_smarty_tpl->tpl_vars['foo']->step, $_smarty_tpl->tpl_vars['foo']->iteration++) {
@@ -100,14 +96,14 @@ echo $_smarty_tpl->tpl_vars['foo']->value+1;?>
         <?php }
 }
 ?>
-        <li class="page-item">
+                        <li class="page-item">
             <a class="page-link" href="<?php echo $_smarty_tpl->tpl_vars['pagina_posterior']->value;?>
 " aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Next</span>
             </a>
         </li>
-    </ul>
+            </ul>
 </nav>
 <?php }
 }

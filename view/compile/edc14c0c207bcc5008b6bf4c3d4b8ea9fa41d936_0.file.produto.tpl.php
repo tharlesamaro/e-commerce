@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-18 20:21:04
+/* Smarty version 3.1.32, created on 2018-05-19 01:03:17
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5aff5fe01e1ef5_89108083',
+  'unifunc' => 'content_5affa205c376c1_07190235',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526682397,
+      1 => 1526701957,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5aff5fe01e1ef5_89108083 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5affa205c376c1_07190235 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
@@ -45,14 +45,14 @@ caminhao.svg" width="15%" height=""
                                placeholder="Ex: 60000000"
                                required>
                     </div>
-                    <div class="form-group">
+                                        <div class="form-group">
                         <label for="tipo_de_frete">Tipo de frete:</label>
                         <select class="form-control" name="tipo_de_frete" id="tipo_de_frete" required>
                             <option selected value="40010">SEDEX</option>
                             <option value="41106">PAC</option>
                         </select>
                     </div>
-                                        <input type="text" id="prod_peso" name="prod_peso" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_peso'];?>
+                                                            <input type="text" id="prod_peso" name="prod_peso" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_peso'];?>
 " hidden>
                     <?php ob_start();
 echo $_smarty_tpl->tpl_vars['p']->value['prod_promocao'];
@@ -83,7 +83,7 @@ if ($_prefixVariable1 == 's' && $_prefixVariable2 <= date('Y-m-d') && $_prefixVa
                     </button>
                 </form>
             </div>
-            <?php ob_start();
+                        <?php ob_start();
 echo $_smarty_tpl->tpl_vars['mostrar_calculo_frete']->value;
 $_prefixVariable4 = ob_get_clean();
 if ($_prefixVariable4 == 1) {?>
@@ -106,9 +106,9 @@ if ($_prefixVariable5 == 0) {?>
                     </ul>
                 </div>
             <?php }?>
-                    </div>
+                                </div>
                 <div class="col-lg-9">
-            <div class="card-produto-info card mt-4">
+                        <div class="card-produto-info card mt-4">
                 <img class="card-img-top img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['base_url_img']->value;
 echo $_smarty_tpl->tpl_vars['p']->value['prod_imagem'];?>
 " alt="">
@@ -139,8 +139,7 @@ if ($_prefixVariable6 == 's' && $_prefixVariable7 <= date('Y-m-d') && $_prefixVa
 </p>
                 </div>
             </div>
-
-            <div class="card-produto-info card card-outline-secondary my-4">
+                                    <div class="card-produto-info card card-outline-secondary my-4">
                 <div class="card-header">
                     Outras Informações:
                 </div>
@@ -159,15 +158,14 @@ if ($_prefixVariable6 == 's' && $_prefixVariable7 <= date('Y-m-d') && $_prefixVa
                     <hr>
                 </div>
             </div>
-
-            <?php ob_start();
+                        <?php ob_start();
 echo $_smarty_tpl->tpl_vars['mostrar_calculo_frete']->value;
 $_prefixVariable9 = ob_get_clean();
 ob_start();
 echo $_smarty_tpl->tpl_vars['frete_codigo_erro']->value;
 $_prefixVariable10 = ob_get_clean();
 if ($_prefixVariable9 == 1 && $_prefixVariable10 == 0) {?>
-                <div class="card-produto-info card card-outline-secondary my-4">
+                                <div class="card-produto-info card card-outline-secondary my-4">
                     <div class="card-header">
                         Informações da compra:
                     </div>
@@ -180,14 +178,12 @@ if ($_prefixVariable9 == 1 && $_prefixVariable10 == 0) {?>
                         <hr>
                     </div>
                 </div>
-            <?php }?>
-
+                            <?php }?>
                         <button type="button" class="produto-info-footer btn btn-success" data-toggle="modal"
                     data-target="#modalCompra"><i
                         class="fa fa-shopping-cart"></i> Comprar
             </button>
-            <br>
-
+                        <br>
             <?php ob_start();
 echo $_smarty_tpl->tpl_vars['mostrar_calculo_frete']->value;
 $_prefixVariable11 = ob_get_clean();
@@ -236,7 +232,7 @@ if ($_prefixVariable11 == 1) {?>
                         </div>
                     </div>
                 </div>
-            <?php } else { ?>
+                            <?php } else { ?>
                                 <div class="modal" id="modalCompra" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">

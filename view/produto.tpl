@@ -1,7 +1,7 @@
 <div class="row">
     {foreach from=$produto item=p}
         <div class="col-lg-3">
-            {* frete *}
+            {*frete sessão*}
             <div class="row">
                 <img class="img-caminhao-frete img-fluid" src="{$base_url_img_root}caminhao.svg" width="15%" height=""
                      alt="">
@@ -16,6 +16,7 @@
                                placeholder="Ex: 60000000"
                                required>
                     </div>
+                    {*selecionar tipo de frete*}
                     <div class="form-group">
                         <label for="tipo_de_frete">Tipo de frete:</label>
                         <select class="form-control" name="tipo_de_frete" id="tipo_de_frete" required>
@@ -23,7 +24,8 @@
                             <option value="41106">PAC</option>
                         </select>
                     </div>
-                    {* campos do tipo hidden *}
+                    {*/selecionar tipo de frete*}
+                    {*campos hidden*}
                     <input type="text" id="prod_peso" name="prod_peso" value="{$p.prod_peso}" hidden>
                     {if {$p.prod_promocao} eq 's' and {$p.prod_data_inicial_promocao} le date('Y-m-d') and {$p.prod_data_final_promocao} ge date('Y-m-d')}
                         <input type="text" id="prod_preco" name="prod_preco" value="{$p.prod_preco_promocao}" hidden>
@@ -35,11 +37,12 @@
                            hidden>
                     <input type="text" id="prod_largura" name="prod_largura" value="{$p.prod_largura}" hidden>
                     <input type="text" id="prod_id" name="prod_id" value="{$p.prod_id}" hidden>
-                    {* botão calcular *}
+                    {*/campos hidden*}
                     <button class="btn btn-success form-control" type="submit"><i class="fa fa-calculator"></i> Calcular
                     </button>
                 </form>
             </div>
+            {*resultado calculo frete*}
             {if {$mostrar_calculo_frete} eq 1}
                 <div class="frete-resultado">
                     <ul class="list-group">
@@ -53,10 +56,12 @@
                     </ul>
                 </div>
             {/if}
-            {* /frete *}
+            {*/resultado calculo frete*}
+            {*/frete sessão*}
         </div>
-        {*Produto - Detalhes*}
+        {*Produto detalhado*}
         <div class="col-lg-9">
+            {*card detalhe produto*}
             <div class="card-produto-info card mt-4">
                 <img class="card-img-top img-fluid" src="{$base_url_img}{$p.prod_imagem}" alt="">
                 <div class="card-body">
@@ -72,7 +77,8 @@
                     <p class="card-text">{$p.prod_descricao}</p>
                 </div>
             </div>
-
+            {*/card detalhe produto*}
+            {*card outras informações*}
             <div class="card-produto-info card card-outline-secondary my-4">
                 <div class="card-header">
                     Outras Informações:
@@ -88,8 +94,9 @@
                     <hr>
                 </div>
             </div>
-
+            {*/card outras informações*}
             {if {$mostrar_calculo_frete} eq 1 and {$frete_codigo_erro} eq 0}
+                {*card informações da compra*}
                 <div class="card-produto-info card card-outline-secondary my-4">
                     <div class="card-header">
                         Informações da compra:
@@ -101,17 +108,17 @@
                         <hr>
                     </div>
                 </div>
+                {*/card informações da compra*}
             {/if}
-
-            {* botão de compra para chamar o modal *}
+            {*botão de comprar que ativa o modal*}
             <button type="button" class="produto-info-footer btn btn-success" data-toggle="modal"
                     data-target="#modalCompra"><i
                         class="fa fa-shopping-cart"></i> Comprar
             </button>
+            {*/botão de comprar que ativa o modal*}
             <br>
-
             {if {$mostrar_calculo_frete} eq 1}
-                {* Modal para finalizar a compra caso já tenha feito o calculo do frete *}
+                {*modal finalizar compra*}
                 <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -154,8 +161,9 @@
                         </div>
                     </div>
                 </div>
+                {*/modal finalizar compra*}
             {else}
-                {* Modal de aviso para calcular o frete antes de finalizar a comra *}
+                {*modal alerta calculo de frete*}
                 <div class="modal" id="modalCompra" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -174,9 +182,9 @@
                         </div>
                     </div>
                 </div>
-                {* /modal *}
+                {*/modal alerta calculo de frete*}
             {/if}
         </div>
-        {* /Produto - Detalhes *}
+        {*/Produto detalhado*}
     {/foreach}
 </div>

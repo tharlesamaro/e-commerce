@@ -1,13 +1,13 @@
 <div class="row text-center">
-
+    {*session informações da compra*}
     {if $smarty.session.sucesso}
-        <div class="alert-success text-center"><h4>PRODUTO COMPRADO COM SUCESSO! Verifique seu e-mail!</h4></div>
+        <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
     {/if}
-
     {if $smarty.session.erro}
-        <h1>Houve um erro ao efetuar sua compra! Entre em contato com o nosso suporte!</h1>
+        <div><p class="alert-danger text-center">Erro ao efetuar compra! Entre em contato conosco.</p>
     {/if}
-
+    {*/session informações da compra*}
+    {*produtos*}
     {foreach from=$produtos item=p}
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
@@ -30,24 +30,32 @@
             </div>
         </div>
     {/foreach}
+    {*/produtos*}
 </div>
-
+{*paginação*}
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
+        {*pagina anterior*}
         <li class="page-item">
             <a class="page-link" href="{$pagina_anterior}" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 <span class="sr-only">Previous</span>
             </a>
         </li>
+        {*/pagina anterior*}
+        {*paginas*}
         {for $foo=0 to $numero_de_paginas}
             <li class="page-item"><a class="page-link" href="{$url_paginacao}{$foo + 1}">{$foo + 1}</a></li>
         {/for}
+        {*/paginas*}
+        {*pagina posterior*}
         <li class="page-item">
             <a class="page-link" href="{$pagina_posterior}" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Next</span>
             </a>
         </li>
+        {*/pagina posterior*}
     </ul>
 </nav>
+{*/paginação*}

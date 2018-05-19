@@ -10,5 +10,7 @@ require './lib/autoload.php';
 
 $database = new Conexao();
 $smarty = new Template();
-$smarty->assign('BASE_URL', Rotas::get_site_home());
+$smarty->assign('base_url', Rotas::get_site_home());
+$smarty->assign('titulo', Config::SITE_NAME);
+$smarty->assign('base_url_img', Rotas::get_imagem_geral_url());
 $smarty->display('index.tpl');

@@ -13,6 +13,7 @@ class Produtos extends Conexao
         parent::__construct();
     }
 
+    # seleciona a lista de produtos do banco de dados  por data de atualização em ordem decrescente
     function get_produtos()
     {
         $query = "SELECT * FROM produtos ORDER BY prod_data_atualizacao DESC";
@@ -20,6 +21,7 @@ class Produtos extends Conexao
         $this->get_lista();
     }
 
+    # seleciona o produto no banco pelo ID
     function get_produto_by_id($id)
     {
         $query = "SELECT * FROM produtos WHERE prod_id = {$id}";
@@ -27,6 +29,7 @@ class Produtos extends Conexao
         $this->get_lista();
     }
 
+    # seleciona a quantidade de produtos que devem ser exibidos por página
     function get_produtos_by_pag($pagina, $itens_por_pagina)
     {
         $query = "SELECT * FROM produtos ORDER BY prod_data_atualizacao DESC LIMIT {$pagina}, {$itens_por_pagina}";
@@ -34,6 +37,7 @@ class Produtos extends Conexao
         $this->get_lista();
     }
 
+    # percorre os produtos e guarda os mesmos em um array de itens
     private function get_lista()
     {
         $i = 0;
