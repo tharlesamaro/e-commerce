@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-19 01:03:17
+/* Smarty version 3.1.32, created on 2018-05-20 16:14:05
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5affa205c376c1_07190235',
+  'unifunc' => 'content_5b01c8fdb58540_91504494',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526701957,
+      1 => 1526843623,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5affa205c376c1_07190235 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b01c8fdb58540_91504494 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
@@ -200,7 +200,7 @@ if ($_prefixVariable11 == 1) {?>
                             </div>
                             <div class="modal-body">
                                 <form action="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
-/compra" method="post">
+/send" method="post">
                                     <div class="form-group">
                                         <label for="nome">Nome:</label>
                                         <input class="form-control" type="text" id="nome" name="nome" minlength="5"
@@ -216,9 +216,6 @@ if ($_prefixVariable11 == 1) {?>
                                     <input type="hidden" id="valor_total" name="valor_total"
                                            value="<?php echo $_smarty_tpl->tpl_vars['valor_total_produto']->value;?>
 " hidden>
-                                    <input type="hidden" id="cep_destino" name="cep_destino" value="<?php echo $_smarty_tpl->tpl_vars['cep_destino']->value;?>
-"
-                                           hidden>
                                                                         <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal"><i
                                                     class="fa fa-window-close"></i> Cancelar

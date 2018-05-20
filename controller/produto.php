@@ -17,7 +17,7 @@ $produto->get_produto_by_id($produto_id);
 $mostrar_calculo_frete = 0;
 
 if (isset($_POST['prod_id'])) {
-    $cep_destino = $_POST['cliente_cep'];
+    $cep_destino = $_POST['cep_destino'];
     $servico = $_POST['tipo_de_frete'];
     $prod_peso = $_POST['prod_peso'];
     $prod_preco = $_POST['prod_preco'];

@@ -24,6 +24,11 @@
     margin-left: 10px;
 }
 
+.botao-produtos {
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
 body {
     padding-top: 54px;
 }
@@ -36,4 +41,9 @@ body {
 
 .card {
     height: 100%;
+}
+
+/* alertas de validação */
+label.error{
+    color: red;
 }

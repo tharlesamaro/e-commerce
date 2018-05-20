@@ -1,12 +1,18 @@
+{*session*}
+{if $smarty.session.compra_sucesso}
+    <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
+{/if}
+{if $smarty.session.compra_erro}
+    <div><p class="alert-danger text-center">Erro ao efetuar compra! Entre em contato conosco.</p></div>
+{/if}
+{if $smarty.session.prod_deletado_sucesso}
+    <div><p class="alert-success text-center">Produto deletado com sucesso!</p></div>
+{/if}
+{if $smarty.session.prod_deletado_erro}
+    </div><p class="alert-success text-center">Erro ao tentar deletar produto!</p></div>
+{/if}
+
 <div class="row text-center">
-    {*session informações da compra*}
-    {if $smarty.session.sucesso}
-        <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
-    {/if}
-    {if $smarty.session.erro}
-        <div><p class="alert-danger text-center">Erro ao efetuar compra! Entre em contato conosco.</p>
-    {/if}
-    {*/session informações da compra*}
     {*produtos*}
     {foreach from=$produtos item=p}
         <div class="col-lg-3 col-md-6 mb-4">
@@ -24,8 +30,11 @@
                     {/if}
                 </div>
                 <div class="card-footer">
-                    <a href="{$produto}{$p.prod_id}" class="btn btn-primary"><i class="fa fa-eye"></i> Ver
-                        produto!</a>
+                    <div class="align-content-center text-center">
+                        <a href="{$produto}{$p.prod_id}" class="botao-produtos btn btn-success"><i class="fa fa-eye"></i></a>
+                        <a href="#" class="botao-produtos btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
+                        <a href="{$deletar}{$p.prod_id}" class="botao-produtos btn btn-danger"><i class="fa fa-trash"></i></a>
+                    </div>
                 </div>
             </div>
         </div>

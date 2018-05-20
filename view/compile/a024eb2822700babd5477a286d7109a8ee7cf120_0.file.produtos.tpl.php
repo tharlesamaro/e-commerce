@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-19 02:02:04
+/* Smarty version 3.1.32, created on 2018-05-20 15:39:12
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5affafcc063397_84187700',
+  'unifunc' => 'content_5b01c0d0843622_33291345',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526704175,
+      1 => 1526841487,
       2 => 'file',
     ),
   ),
@@ -20,15 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5affafcc063397_84187700 (Smarty_Internal_Template $_smarty_tpl) {
-?><div class="row text-center">
-        <?php if ($_SESSION['sucesso']) {?>
-        <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
-    <?php }?>
-    <?php if ($_SESSION['erro']) {?>
-        <div><p class="alert-danger text-center">Erro ao efetuar compra! Entre em contato conosco.</p>
-    <?php }?>
-            <?php
+function content_5b01c0d0843622_33291345 (Smarty_Internal_Template $_smarty_tpl) {
+if ($_SESSION['compra_sucesso']) {?>
+    <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
+<?php }
+if ($_SESSION['compra_erro']) {?>
+    <div><p class="alert-danger text-center">Erro ao efetuar compra! Entre em contato conosco.</p></div>
+<?php }
+if ($_SESSION['prod_deletado_sucesso']) {?>
+    <div><p class="alert-success text-center">Produto deletado com sucesso!</p></div>
+<?php }
+if ($_SESSION['prod_deletado_erro']) {?>
+    </div><p class="alert-success text-center">Erro ao tentar deletar produto!</p></div>
+<?php }?>
+
+<div class="row text-center">
+        <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
@@ -63,10 +70,15 @@ if ($_prefixVariable1 == 's' && $_prefixVariable2 <= date('Y-m-d') && $_prefixVa
                     <?php }?>
                 </div>
                 <div class="card-footer">
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['produto']->value;
+                    <div class="align-content-center text-center">
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['produto']->value;
 echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
-" class="btn btn-primary"><i class="fa fa-eye"></i> Ver
-                        produto!</a>
+" class="botao-produtos btn btn-success"><i class="fa fa-eye"></i></a>
+                        <a href="#" class="botao-produtos btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['deletar']->value;
+echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
+" class="botao-produtos btn btn-danger"><i class="fa fa-trash"></i></a>
+                    </div>
                 </div>
             </div>
         </div>

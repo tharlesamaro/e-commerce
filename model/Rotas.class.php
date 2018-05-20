@@ -70,6 +70,11 @@ Class Rotas
         return ($id <= 0 || $id == null) ? 1 : $id;
     }
 
+    # retorna a url de deletar o produto
+    static function get_url_deletar() {
+        return self::get_site_home() . '/deletar/';
+    }
+
     # tratamento das urls amigáveis
     static function get_pag()
     {

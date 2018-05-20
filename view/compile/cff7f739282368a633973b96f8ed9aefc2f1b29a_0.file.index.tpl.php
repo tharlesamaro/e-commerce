@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-19 01:29:01
+/* Smarty version 3.1.32, created on 2018-05-20 01:10:35
   from '/var/www/html/ecommerce/view/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5affa80d4a03a7_01032657',
+  'unifunc' => 'content_5b00f53b1de7a2_46282111',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cff7f739282368a633973b96f8ed9aefc2f1b29a' => 
     array (
       0 => '/var/www/html/ecommerce/view/index.tpl',
-      1 => 1526703523,
+      1 => 1526787258,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5affa80d4a03a7_01032657 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b00f53b1de7a2_46282111 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
 <head>
@@ -99,6 +99,10 @@ logo.svg" width="50" height="50" alt="">
 <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /assets/js/mascaras.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+/assets/js/jquery-validation-1.17.0/dist/jquery.validate.js"><?php echo '</script'; ?>
 >
 </body>
 </html>

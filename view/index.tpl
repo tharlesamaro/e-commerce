@@ -55,6 +55,7 @@
 <script src="{$base_url}/assets/js/jquery.maskedinput.js"></script>
 <script src="{$base_url}/assets/js/jquery.maskMoney.min.js"></script>
 <script src="{$base_url}/assets/js/mascaras.js"></script>
+<script src="{$base_url}/assets/js/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
 {*/javascript*}
 </body>
 </html>

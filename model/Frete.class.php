@@ -14,7 +14,7 @@ class Frete
     }
 
     # função que calcula o valor do frete com o webservice dos correios e retorna um xml.
-    static function calcular_frete($cep_destino, $frete, $peso, $preco, $altura = 6, $comprimento = 20, $largura = 20)
+    static function calcular_frete($cep_destino, $frete, $peso, $preco, $altura, $comprimento, $largura)
     {
         $url = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?";
         $url .= "nCdEmpresa=";

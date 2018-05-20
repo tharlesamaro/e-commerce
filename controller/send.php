@@ -36,12 +36,12 @@ try {
     # Conteúdo
     $mail->isHTML(true);
     $mail->Subject = 'Nova compra efetuada!';
-    $mail->Body = '<b>Compra efetuada com sucesso!</b> ' . '<br><br><b>Cliente:</b> ' . $cliente_nome . '<br><b>Email:</b> ' . $cliente_email . '<br><b>Produto:</b> ' . $produto_nome . '<br><b>Valor total:</b> R$ ' . $produto_valor_total . '<br><b>CEP Destino:</b> ' . $cliente_cep;
+    $mail->Body = '<b>Compra efetuada com sucesso!</b> ' . '<br><b>Cliente:</b> ' . $cliente_nome . '<br><b>Email:</b> ' . $cliente_email . '<br><b>Produto:</b> ' . $produto_nome . '<br><b>Valor total:</b> R$ ' . $produto_valor_total;
     $mail->send();
 
-    $_SESSION['sucesso'];
+    $_SESSION['compra_sucesso'] = true;
 } catch (Exception $e) {
-    $_SESSION['erro'];
+    $_SESSION['compra_erro'] = true;
 }
 
 header("Location: produtos/1");

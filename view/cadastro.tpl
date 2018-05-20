@@ -1,16 +1,18 @@
 <div>
-    {*session informações do cadastro*}
-    {if $smarty.session.sucesso}
-        <div><p class="alert-success text-center">Produto cadastrado com sucesso!</p></div>
+    {if $smarty.session.cadastro_sucesso}
+        <p class="alert-success text-center">Produto cadastrado com sucesso!</p>
     {/if}
-    {if $smarty.session.erro}
-        <div><p class="alert-danger text-center">Erro ao cadastrar o produto!.</p>
+    {if $smarty.session.cadastro_erro}
+        <p class="alert-danger text-center">Erro ao cadastrar o produto!.</p>
     {/if}
-    {*/session informações do cadastro*}
+    {*/session informações de cadastro*}
 
+    <h3 class="text-center">Cadastro de produto</h3>
+    {*session informações de cadastro*}
+    <hr>
     <p>Atenção! Campos com <b class="text-danger">*</b> são obrigatórios.</p>
     <hr>
-    <form action="{$base_url}/cadastro/" method="post" enctype="multipart/form-data">
+    <form action="{$base_url}/cadastro" method="post" enctype="multipart/form-data" id="formCadastroProdutos">
         {*nome do produto*}
         <div class="form-group">
             <label for="nome">Nome: <b class="text-danger">*</b></label>
@@ -23,7 +25,8 @@
         {*preco*}
         <div class="form-group">
             <label for="preco">Preço: <b class="text-danger">*</b></label>
-            <input type="text" class="form-control" id="preco" name="preco" placeholder="" required>
+            <input type="text" class="form-control" id="preco" name="preco" minlength="4" maxlength="8"
+                   placeholder="0.00" required>
         </div>
         {*/preco*}
 
@@ -31,7 +34,7 @@
         <div class="form-group">
             <label for="descricao">Descrição: <b class="text-danger">*</b></label>
             <textarea type="text" class="form-control" id="descricao" name="descricao"
-                      placeholder="Descrição do produto" maxlength="255" minlength="5" required></textarea>
+                      placeholder="Descrição do produto" maxlength="255" minlength="10" required></textarea>
         </div>
         {*/descricao*}
 
@@ -47,56 +50,61 @@
 
         {*valor promocional*}
         <div class="form-group">
-            <label for="preco_promocao">Valor promocional:</label>
-            <input type="text" class="form-control" id="preco_promocao" name="preco_promocao">
+            <label for="preco_promocao">Preço promocional:</label>
+            <input type="text" class="form-control" id="preco_promocao" name="preco_promocao" minlength="4"
+                   maxlength="8" placeholder="0.00" disabled>
         </div>
         {*/valor promocional*}
 
         {*data incial promoção*}
         <div class="form-group">
             <label for="data_inicio_promocao">Início da promoção:</label>
-            <input type="text" class="form-control" id="data_inicio_promocao" name="data_inicio promocao">
+            <input type="text" class="form-control" id="data_inicio_promocao" name="data_inicio_promocao" disabled>
         </div>
         {*/data incial promoção*}
 
         {*data final promoção*}
         <div class="form-group">
             <label for="data_final_promocao">Fim da promoção:</label>
-            <input type="text" class="form-control" id="data_final_promocao" name="data_final_promocao">
+            <input type="text" class="form-control" id="data_final_promocao" name="data_final_promocao" disabled>
         </div>
         {*/data final promoção*}
 
         {*peso*}
         <div class="form-group">
             <label for="peso">Peso: <b class="text-danger">*</b></label>
-            <input type="text" class="form-control" id="peso" name="peso" placeholder="" required>
+            <input type="text" class="form-control" id="peso" name="peso" minlength="4" maxlength="6"
+                   placeholder="00.000" required>
         </div>
         {*/peso*}
 
         {*altura*}
         <div class="form-group">
-            <label for="altura">Altura</label>
-            <input type="text" class="form-control" id="altura" name="altura" placeholder="">
+            <label for="altura">Altura: <b class="text-danger">*</b></label>
+            <input type="text" class="form-control" id="altura" name="altura" minlength="5" maxlength="6"
+                   placeholder="00.00" required>
         </div>
         {*/altura*}
 
         {*comprimento*}
-        <div class="form-group">
-            <label for="comprimento">Comprimento:</label>
-            <input type="text" class="form-control" id="comprimento" name="comprimento" placeholder="">
+        <div class=" form-group">
+            <label for="comprimento">Comprimento: <b class="text-danger">*</b></label>
+            <input type="text" class="form-control" id="comprimento" name="comprimento" minlength="4" maxlength="6"
+                   placeholder="00.00" required>
         </div>
         {*/comprimento*}
 
         {*largura*}
         <div class="form-group">
-            <label for="largura">Largura:</label>
-            <input type="largura" class="form-control" id="largura" name="largura" placeholder="">
+            <label for="largura">Largura: <b class="text-danger">*</b></label>
+            <input type="largura" class="form-control" id="largura" name="largura" minlength="4" maxlength="6"
+                   placeholder="00.00" required>
         </div>
         {*/largura*}
 
         {*imagem*}
         <div class="form-group">
-            <label for="imagem">Imagem (recomendado 940x400): <b class="text-danger">*</b></label>
+            <label for="imagem">Imagem (940x400): <b class="text-danger">*</b></label>
             <input type="file" class="form-control-file" id="imagem" name="imagem" aria-describedby="fileHelp" required>
         </div>
         {*/imagem*}

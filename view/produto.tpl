@@ -130,7 +130,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{$base_url}/compra" method="post">
+                                <form action="{$base_url}/send" method="post">
                                     <div class="form-group">
                                         <label for="nome">Nome:</label>
                                         <input class="form-control" type="text" id="nome" name="nome" minlength="5"
@@ -145,8 +145,6 @@
                                     <input type="hidden" id="prod_nome" name="prod_nome" value="{$p.prod_nome}" hidden>
                                     <input type="hidden" id="valor_total" name="valor_total"
                                            value="{$valor_total_produto}" hidden>
-                                    <input type="hidden" id="cep_destino" name="cep_destino" value="{$cep_destino}"
-                                           hidden>
                                     {* /campos hidden *}
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal"><i

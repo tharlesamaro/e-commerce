@@ -66,18 +66,25 @@ class Produtos extends Conexao
         $prod_nome,
         $prod_descricao,
         $prod_preco,
-        $prod_altura = 6,
-        $prod_comprimento = 20,
+        $prod_altura,
+        $prod_comprimento,
         $prod_peso,
-        $prod_largura = 20,
-        $prod_promocao = 'n',
-        $prod_preco_promocao = null,
-        $prod_data_inicial_promocao = null,
-        $prod_data_final_promocao = null,
-        $prod_imagem = 'teste.jpg'
+        $prod_largura,
+        $prod_promocao,
+        $prod_preco_promocao,
+        $prod_data_inicial_promocao,
+        $prod_data_final_promocao,
+        $prod_imagem
     )
     {
         $query = "INSERT INTO produtos (prod_nome, prod_descricao, prod_preco, prod_altura, prod_comprimento, prod_peso, prod_largura, prod_promocao, prod_preco_promocao, prod_data_inicial_promocao, prod_data_final_promocao, prod_imagem) VALUES ('{$prod_nome}', '{$prod_descricao}', {$prod_preco}, {$prod_altura}, {$prod_comprimento}, {$prod_peso}, {$prod_largura}, '{$prod_promocao}', {$prod_preco_promocao}, '{$prod_data_inicial_promocao}', '{$prod_data_final_promocao}', '{$prod_imagem}')";
+        $this->execute_query($query);
+    }
+
+    # função para deletar produto
+    function deletar_produto($id)
+    {
+        $query = "DELETE FROM produtos WHERE prod_id = {$id}";
         $this->execute_query($query);
     }
 }
