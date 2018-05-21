@@ -87,4 +87,21 @@ class Produtos extends Conexao
         $query = "DELETE FROM produtos WHERE prod_id = {$id}";
         $this->execute_query($query);
     }
+
+    # função para atualizar um produto
+    function atualizar_produto(
+        $prod_id,
+        $prod_nome,
+        $prod_descricao,
+        $prod_preco,
+        $prod_promocao,
+        $prod_preco_promocao,
+        $prod_data_inicial_promocao,
+        $prod_data_final_promocao,
+        $prod_imagem
+    )
+    {
+        $query = "UPDATE produtos set prod_nome = '{$prod_nome}', prod_descricao = '{$prod_descricao}', prod_preco = {$prod_preco}, prod_promocao = '{$prod_promocao}', prod_preco_promocao = {$prod_preco_promocao}, prod_data_inicial_promocao = '{$prod_data_inicial_promocao}', prod_data_final_promocao = '{$prod_data_final_promocao}', prod_imagem = '{$prod_imagem}' WHERE prod_id = {$prod_id}";
+        $this->execute_query($query);
+    }
 }

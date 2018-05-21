@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-21 03:52:55
+/* Smarty version 3.1.32, created on 2018-05-21 12:08:41
   from '/var/www/html/ecommerce/view/editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b026cc705e003_32559176',
+  'unifunc' => 'content_5b02e0f97133f0_62247676',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c175b6f38615526e1a79fcb122d9d0e1ccb4bcb4' => 
     array (
       0 => '/var/www/html/ecommerce/view/editar.tpl',
-      1 => 1526885559,
+      1 => 1526915304,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b026cc705e003_32559176 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b02e0f97133f0_62247676 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div>
     <h3 class="text-center">Edição de produto</h3>
     <hr>
@@ -31,8 +31,9 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 ?>
-        <form action="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
-/cadastro" method="post" enctype="multipart/form-data" id="formCadastroProdutos">
+        <form action="<?php echo $_smarty_tpl->tpl_vars['editar']->value;
+echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
+" method="post" enctype="multipart/form-data" id="formCadastroProdutos">
                         <div class="form-group">
                 <label for="nome">Nome: <b class="text-danger">*</b></label>
                 <input type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_nome'];?>
@@ -169,6 +170,9 @@ echo implode("/",array_reverse(explode("-",$_prefixVariable4)));?>
                 <input type="file" class="form-control-file" id="form_edit_imagem" name="form_edit_imagem"
                        aria-describedby="fileHelp">
             </div>
+                        <input type="text" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_imagem'];?>
+" id="form_edit_imagem_hidden" name="form_edit_imagem_hidden"
+                   hidden>
                         <hr>
                         <div class="form-row">
                 <div class="form-group">

@@ -11,6 +11,12 @@
 {if $smarty.session.prod_deletado_erro}
     <div><p class="alert-success text-center">Erro ao tentar deletar produto!</p></div>
 {/if}
+{if $smarty.session.atualizado_sucesso}
+    <div><p class="alert-success text-center">Produto atualizado com sucesso!</p></div>
+{/if}
+{if $smarty.session.atualizado_erro}
+    <div><p class="alert-success text-center">Erro ao tentar atualizar o produto!</p></div>
+{/if}
 {*/session alertas*}
 <div class="row text-center">
     {*produtos*}

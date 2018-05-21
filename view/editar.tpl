@@ -5,7 +5,7 @@
     <hr>
     {*formulário cadastro de produto*}
     {foreach from=$produto item=p}
-        <form action="{$base_url}/cadastro" method="post" enctype="multipart/form-data" id="formCadastroProdutos">
+        <form action="{$editar}{$p.prod_id}" method="post" enctype="multipart/form-data" id="formCadastroProdutos">
             {*nome do produto*}
             <div class="form-group">
                 <label for="nome">Nome: <b class="text-danger">*</b></label>
@@ -98,42 +98,6 @@
             </div>
             {*/data final promoção*}
 
-            {*peso*}
-            <div class="form-group">
-                <label for="peso">Peso: <b class="text-danger">*</b></label>
-                <input type="text" class="form-control" value="{$p.prod_peso}" id="peso" name="peso" minlength="3"
-                       maxlength="3"
-                       placeholder="00.0" required>
-            </div>
-            {*/peso*}
-
-            {*altura*}
-            <div class="form-group">
-                <label for="altura">Altura: <b class="text-danger">*</b></label>
-                <input type="text" class="form-control" value="{$p.prod_altura}" id="altura" name="altura" minlength="3"
-                       maxlength="3"
-                       placeholder="00.0" required>
-            </div>
-            {*/altura*}
-
-            {*comprimento*}
-            <div class=" form-group">
-                <label for="comprimento">Comprimento: <b class="text-danger">*</b></label>
-                <input type="text" class="form-control" value="{$p.prod_comprimento}" id="comprimento"
-                       name="comprimento" minlength="3" maxlength="3"
-                       placeholder="00.0" required>
-            </div>
-            {*/comprimento*}
-
-            {*largura*}
-            <div class="form-group">
-                <label for="largura">Largura: <b class="text-danger">*</b></label>
-                <input type="largura" class="form-control" value="{$p.prod_largura}" id="largura" name="largura"
-                       minlength="3" maxlength="3"
-                       placeholder="00.0" required>
-            </div>
-            {*/largura*}
-
             {*imagem*}
             <div class="form-group">
                 <label for="imagem">Imagem (940x400):</label>
@@ -151,7 +115,7 @@
                     <button type="submit" class="botao-cadastro btn btn-success">Salvar</button>
                 </div>
                 <div class="form-group">
-                    <button type="reset" class="botao-cadastro btn btn-danger form-control">Cancelar</button>
+                    <a href="{$base_url}" class="botao-cadastro btn btn-danger form-control">Cancelar</a>
                 </div>
             </div>
             {*/botões salvar e cancelar*}

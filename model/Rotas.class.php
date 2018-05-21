@@ -80,6 +80,11 @@ Class Rotas
         return self::get_site_home() . '/form-editar/';
     }
 
+    static function get_editar()
+    {
+        return self::get_site_home() . '/editar/';
+    }
+
     # tratamento das urls amigáveis
     static function get_pag()
     {
