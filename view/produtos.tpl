@@ -33,7 +33,7 @@
                     <div class="align-content-center text-center">
                         <a href="{$produto}{$p.prod_id}" class="botao-produtos btn btn-success"><i
                                     class="fa fa-eye"></i></a>
-                        <a href="#" class="botao-produtos btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
+                        <a href="{$editar}{$p.prod_id}" class="botao-produtos btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
                         <a href="{$deletar}{$p.prod_id}" class="botao-produtos btn btn-danger"><i
                                     class="fa fa-trash"></i></a>
                     </div>

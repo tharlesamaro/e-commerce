@@ -14,7 +14,7 @@ if (isset($_POST['nome'])) {
     $data_default = '0000-00-00';
     $preco_default = 0.00;
 
-    # retirando "," do preço (depois criar uma função)
+    # retirando "," do preço
     $preco_promocao_formatado = str_replace(',', '', $_POST['preco_promocao']);
     $preco_promo_vazio = $preco_promocao_formatado == null || $preco_promocao_formatado == "" || is_numeric($preco_promocao_formatado) != true;
     $preco_promocao = $preco_promo_vazio ? $preco_default : $preco_promocao_formatado;

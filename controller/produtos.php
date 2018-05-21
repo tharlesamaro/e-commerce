@@ -26,6 +26,7 @@ $smarty->assign('produtos', $produtos->get_itens());
 $smarty->assign('base_url_img', Rotas::get_imagem_produtos_url());
 $smarty->assign('produto', Rotas::get_produto());
 $smarty->assign('deletar', Rotas::get_url_deletar());
+$smarty->assign('editar', Rotas::get_url_editar());
 $smarty->assign('numero_de_paginas', $numero_de_paginas - 1);
 $smarty->assign('url_paginacao', Rotas::get_produtos());
 $smarty->assign('pagina_anterior', Rotas::get_produtos() . ($pagina_atual - 1));

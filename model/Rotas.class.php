@@ -75,6 +75,11 @@ Class Rotas
         return self::get_site_home() . '/deletar/';
     }
 
+    # retorna a url de edição do produto
+    static function get_url_editar() {
+        return self::get_site_home() . '/form-editar/';
+    }
+
     # tratamento das urls amigáveis
     static function get_pag()
     {

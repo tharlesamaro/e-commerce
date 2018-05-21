@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-21 02:10:01
+/* Smarty version 3.1.32, created on 2018-05-21 02:48:28
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b0254a9308199_17174890',
+  'unifunc' => 'content_5b025dac67db67_68332758',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526879392,
+      1 => 1526881663,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b0254a9308199_17174890 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b025dac67db67_68332758 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_SESSION['compra_sucesso']) {?>
     <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
 <?php }
@@ -74,7 +74,9 @@ if ($_prefixVariable1 == 's' && $_prefixVariable2 <= date('Y-m-d') && $_prefixVa
 echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
 " class="botao-produtos btn btn-success"><i
                                     class="fa fa-eye"></i></a>
-                        <a href="#" class="botao-produtos btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['editar']->value;
+echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
+" class="botao-produtos btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
                         <a href="<?php echo $_smarty_tpl->tpl_vars['deletar']->value;
 echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
 " class="botao-produtos btn btn-danger"><i

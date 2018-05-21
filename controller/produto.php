@@ -29,7 +29,7 @@ if (isset($_POST['prod_id'])) {
     # calcula o frete com o ws dos correios e retorna um xml
     $xml_frete = Frete::calcular_frete($cep_destino, $servico, $prod_peso, $prod_preco, $prod_altura, $prod_comprimento, $prod_largura);
 
-    # guarda d tipo de frete e valor total da compra
+    # guarda o tipo de frete e valor total da compra
     $frete_escolhido = ($_POST['tipo_de_frete'] == 40010) ? 'SEDEX' : 'PAC';
     $valor_total_produto = $prod_preco + str_replace(',', '.', $xml_frete->Valor);
 
