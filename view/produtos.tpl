@@ -1,4 +1,4 @@
-{*session*}
+{*session alertas*}
 {if $smarty.session.compra_sucesso}
     <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
 {/if}
@@ -9,9 +9,9 @@
     <div><p class="alert-success text-center">Produto deletado com sucesso!</p></div>
 {/if}
 {if $smarty.session.prod_deletado_erro}
-    </div><p class="alert-success text-center">Erro ao tentar deletar produto!</p></div>
+    <div><p class="alert-success text-center">Erro ao tentar deletar produto!</p></div>
 {/if}
-
+{*/session alertas*}
 <div class="row text-center">
     {*produtos*}
     {foreach from=$produtos item=p}
@@ -31,9 +31,11 @@
                 </div>
                 <div class="card-footer">
                     <div class="align-content-center text-center">
-                        <a href="{$produto}{$p.prod_id}" class="botao-produtos btn btn-success"><i class="fa fa-eye"></i></a>
+                        <a href="{$produto}{$p.prod_id}" class="botao-produtos btn btn-success"><i
+                                    class="fa fa-eye"></i></a>
                         <a href="#" class="botao-produtos btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
-                        <a href="{$deletar}{$p.prod_id}" class="botao-produtos btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <a href="{$deletar}{$p.prod_id}" class="botao-produtos btn btn-danger"><i
+                                    class="fa fa-trash"></i></a>
                     </div>
                 </div>
             </div>
@@ -52,11 +54,13 @@
             </a>
         </li>
         {*/pagina anterior*}
+
         {*paginas*}
         {for $foo=0 to $numero_de_paginas}
             <li class="page-item"><a class="page-link" href="{$url_paginacao}{$foo + 1}">{$foo + 1}</a></li>
         {/for}
         {*/paginas*}
+
         {*pagina posterior*}
         <li class="page-item">
             <a class="page-link" href="{$pagina_posterior}" aria-label="Next">

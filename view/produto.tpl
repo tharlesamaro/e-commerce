@@ -1,7 +1,7 @@
 <div class="row">
     {foreach from=$produto item=p}
+        {*frete*}
         <div class="col-lg-3">
-            {*frete sessão*}
             <div class="row">
                 <img class="img-caminhao-frete img-fluid" src="{$base_url_img_root}caminhao.svg" width="15%" height=""
                      alt="">
@@ -25,6 +25,7 @@
                         </select>
                     </div>
                     {*/selecionar tipo de frete*}
+
                     {*campos hidden*}
                     <input type="text" id="prod_peso" name="prod_peso" value="{$p.prod_peso}" hidden>
                     {if {$p.prod_promocao} eq 's' and {$p.prod_data_inicial_promocao} le date('Y-m-d') and {$p.prod_data_final_promocao} ge date('Y-m-d')}
@@ -57,8 +58,9 @@
                 </div>
             {/if}
             {*/resultado calculo frete*}
-            {*/frete sessão*}
         </div>
+        {*/frete*}
+
         {*Produto detalhado*}
         <div class="col-lg-9">
             {*card detalhe produto*}
@@ -78,6 +80,7 @@
                 </div>
             </div>
             {*/card detalhe produto*}
+
             {*card outras informações*}
             <div class="card-produto-info card card-outline-secondary my-4">
                 <div class="card-header">

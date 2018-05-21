@@ -79,6 +79,7 @@ Tecnologias usadas
 - CSS
 - Composer
 - Fontawesome
+- Google Fonts
 - HTML
 - JQuery
 - Linux
@@ -90,4 +91,4 @@ Tecnologias usadas
 - PHPStorm
 - Smarty
 
-**OBS: todos os testes foram feitos no navegador Mozila Firefox.**
+**OBS: todos os testes foram feitos no navegador Mozila Firefox e Google Chrome.**

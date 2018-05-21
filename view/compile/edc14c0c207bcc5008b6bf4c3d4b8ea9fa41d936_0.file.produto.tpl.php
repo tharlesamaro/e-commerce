@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-20 16:14:05
+/* Smarty version 3.1.32, created on 2018-05-21 01:24:10
   from '/var/www/html/ecommerce/view/produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b01c8fdb58540_91504494',
+  'unifunc' => 'content_5b0249ea26eb49_91642348',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edc14c0c207bcc5008b6bf4c3d4b8ea9fa41d936' => 
     array (
       0 => '/var/www/html/ecommerce/view/produto.tpl',
-      1 => 1526843623,
+      1 => 1526870934,
       2 => 'file',
     ),
   ),
@@ -20,15 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b01c8fdb58540_91504494 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b0249ea26eb49_91642348 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="row">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produto']->value, 'p');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 ?>
-        <div class="col-lg-3">
-                        <div class="row">
+                <div class="col-lg-3">
+            <div class="row">
                 <img class="img-caminhao-frete img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['base_url_img_root']->value;?>
 caminhao.svg" width="15%" height=""
                      alt="">
@@ -52,7 +52,8 @@ caminhao.svg" width="15%" height=""
                             <option value="41106">PAC</option>
                         </select>
                     </div>
-                                                            <input type="text" id="prod_peso" name="prod_peso" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_peso'];?>
+                    
+                                        <input type="text" id="prod_peso" name="prod_peso" value="<?php echo $_smarty_tpl->tpl_vars['p']->value['prod_peso'];?>
 " hidden>
                     <?php ob_start();
 echo $_smarty_tpl->tpl_vars['p']->value['prod_promocao'];
@@ -106,7 +107,8 @@ if ($_prefixVariable5 == 0) {?>
                     </ul>
                 </div>
             <?php }?>
-                                </div>
+                    </div>
+        
                 <div class="col-lg-9">
                         <div class="card-produto-info card mt-4">
                 <img class="card-img-top img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['base_url_img']->value;
@@ -139,7 +141,8 @@ if ($_prefixVariable6 == 's' && $_prefixVariable7 <= date('Y-m-d') && $_prefixVa
 </p>
                 </div>
             </div>
-                                    <div class="card-produto-info card card-outline-secondary my-4">
+            
+                        <div class="card-produto-info card card-outline-secondary my-4">
                 <div class="card-header">
                     Outras Informações:
                 </div>

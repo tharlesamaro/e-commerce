@@ -1,18 +1,20 @@
-// máscaras
+// mascaras para campos numéricos dos formulários
 jQuery(function ($) {
+    // view/cadastro.tpl
     $("#preco").maskMoney();
     $("#preco_promocao").maskMoney();
     $("#data_inicio_promocao").mask("99/99/9999");
     $("#data_final_promocao").mask("99/99/9999");
-    $("#peso").mask("99.999");
-    $("#altura").mask("99.99");
-    $("#comprimento").mask("99.99");
-    $("#largura").mask("99.99");
+    $("#peso").mask("99.9");
+    $("#altura").mask("99.9");
+    $("#comprimento").mask("99.9");
+    $("#largura").mask("99.9");
+    // view/produto.tpl
     $("#cep_destino").mask("99999999");
 });
 
 $(document).ready(function () {
-    // habilitar a edição da data e preço da promoção se a mesma for selecionada como sim
+    // habilita os capos da promoção para edição
     $('#promocao').change(function () {
         var tipo = $("#promocao option:selected").text();
         if (tipo == 'Sim') {
@@ -25,7 +27,7 @@ $(document).ready(function () {
             $('#data_final_promocao').attr('disabled', true).attr('required', false);
         }
     });
-    // jquery validation 11.17.0
+    // jquery validation  - view/cadastro.tpl
     $("#formCadastroProdutos").validate({
         // regras de validação
         rules: {
@@ -46,7 +48,7 @@ $(document).ready(function () {
                 maxlength: 255
             },
             preco_promocao: {
-                minlength: 4,
+                minlength: 3,
                 maxlength: 8
             },
             data_inicio_promocao: {
@@ -59,22 +61,23 @@ $(document).ready(function () {
             },
             peso: {
                 required: true,
-                maxlength: 6
+                minlength: 4,
+                maxlength: 4
             },
             altura: {
                 required: true,
-                minlength: 1,
-                maxlength: 6
+                minlength: 4,
+                maxlength: 4
             },
             comprimento: {
                 required: true,
-                minlength: 1,
-                maxlength: 6
+                minlength: 4,
+                maxlength: 4
             },
             largura: {
                 required: true,
-                minlength: 1,
-                maxlength: 6
+                minlength: 4,
+                maxlength: 4
             },
             imagem: {
                 required: true,
@@ -112,16 +115,22 @@ $(document).ready(function () {
                 minlength: "O campo deve ter pelo menos 8 dígitos"
             },
             peso: {
-                required: "O campo peso é obrigatório. Ex: 6.000 KG"
+                required: "O campo peso é obrigatório. Ex: 6.5 KG",
+                minlength: "O campo deve ter no mínimo 3 digitos",
+                maxlength: "O campo deve ter no máximo 3 digitos"
             },
             altura: {
                 required: "O campo altura é obrigatório"
             },
             comprimento: {
-                required: "O campo comprimento é obrigatório"
+                required: "O campo comprimento é obrigatório",
+                minlength: "O campo deve ter no mínimo 3 digitos",
+                maxlength: "O campo deve ter no máximo 3 digitos"
             },
             largura: {
-                required: "O campo largura é obrigatório"
+                required: "O campo largura é obrigatório",
+                minlength: "O campo deve ter no mínimo 3 digitos",
+                maxlength: "O campo deve ter no máximo 3 digitos"
             },
             imagem: {
                 required: "O campo imagem é obrigatório.",
@@ -129,5 +138,4 @@ $(document).ready(function () {
             }
         }
     });
-    // fim jquery validation 11.17.0
 });

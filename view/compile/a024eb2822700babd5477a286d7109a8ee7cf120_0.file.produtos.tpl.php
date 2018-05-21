@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-20 15:39:12
+/* Smarty version 3.1.32, created on 2018-05-20 23:53:53
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b01c0d0843622_33291345',
+  'unifunc' => 'content_5b0234c13564f9_25538299',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526841487,
+      1 => 1526870991,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b01c0d0843622_33291345 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b0234c13564f9_25538299 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_SESSION['compra_sucesso']) {?>
     <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
 <?php }
@@ -31,9 +31,8 @@ if ($_SESSION['prod_deletado_sucesso']) {?>
     <div><p class="alert-success text-center">Produto deletado com sucesso!</p></div>
 <?php }
 if ($_SESSION['prod_deletado_erro']) {?>
-    </div><p class="alert-success text-center">Erro ao tentar deletar produto!</p></div>
+    <div><p class="alert-success text-center">Erro ao tentar deletar produto!</p></div>
 <?php }?>
-
 <div class="row text-center">
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
@@ -73,11 +72,13 @@ if ($_prefixVariable1 == 's' && $_prefixVariable2 <= date('Y-m-d') && $_prefixVa
                     <div class="align-content-center text-center">
                         <a href="<?php echo $_smarty_tpl->tpl_vars['produto']->value;
 echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
-" class="botao-produtos btn btn-success"><i class="fa fa-eye"></i></a>
+" class="botao-produtos btn btn-success"><i
+                                    class="fa fa-eye"></i></a>
                         <a href="#" class="botao-produtos btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
                         <a href="<?php echo $_smarty_tpl->tpl_vars['deletar']->value;
 echo $_smarty_tpl->tpl_vars['p']->value['prod_id'];?>
-" class="botao-produtos btn btn-danger"><i class="fa fa-trash"></i></a>
+" class="botao-produtos btn btn-danger"><i
+                                    class="fa fa-trash"></i></a>
                     </div>
                 </div>
             </div>
@@ -96,7 +97,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <span class="sr-only">Previous</span>
             </a>
         </li>
-                        <?php
+        
+                <?php
 $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['foo']->step = 1;$_smarty_tpl->tpl_vars['foo']->total = (int) ceil(($_smarty_tpl->tpl_vars['foo']->step > 0 ? $_smarty_tpl->tpl_vars['numero_de_paginas']->value+1 - (0) : 0-($_smarty_tpl->tpl_vars['numero_de_paginas']->value)+1)/abs($_smarty_tpl->tpl_vars['foo']->step));
 if ($_smarty_tpl->tpl_vars['foo']->total > 0) {
 for ($_smarty_tpl->tpl_vars['foo']->value = 0, $_smarty_tpl->tpl_vars['foo']->iteration = 1;$_smarty_tpl->tpl_vars['foo']->iteration <= $_smarty_tpl->tpl_vars['foo']->total;$_smarty_tpl->tpl_vars['foo']->value += $_smarty_tpl->tpl_vars['foo']->step, $_smarty_tpl->tpl_vars['foo']->iteration++) {
@@ -108,7 +110,8 @@ echo $_smarty_tpl->tpl_vars['foo']->value+1;?>
         <?php }
 }
 ?>
-                        <li class="page-item">
+        
+                <li class="page-item">
             <a class="page-link" href="<?php echo $_smarty_tpl->tpl_vars['pagina_posterior']->value;?>
 " aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
