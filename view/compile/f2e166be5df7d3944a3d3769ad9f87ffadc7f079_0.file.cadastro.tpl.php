@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-21 02:16:01
+/* Smarty version 3.1.32, created on 2018-05-21 14:05:08
   from '/var/www/html/ecommerce/view/cadastro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b025611d1a233_04433546',
+  'unifunc' => 'content_5b02fc4472fd58_11267099',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2e166be5df7d3944a3d3769ad9f87ffadc7f079' => 
     array (
       0 => '/var/www/html/ecommerce/view/cadastro.tpl',
-      1 => 1526879490,
+      1 => 1526922302,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b025611d1a233_04433546 (Smarty_Internal_Template $_smarty_tpl) {
-?><div>
+function content_5b02fc4472fd58_11267099 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="animated fadeIn">
         <?php if ($_SESSION['cadastro_sucesso']) {?>
         <p class="alert-success text-center">Produto cadastrado com sucesso!</p>
     <?php }?>

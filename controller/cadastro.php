@@ -23,19 +23,19 @@ if (isset($_POST['nome'])) {
     $data_formatada_para_o_db = implode("-", array_reverse(explode("/", $_POST['data_inicio_promocao'])));
     $data_vazia = ($_POST['data_inicio_promocao'] == null || $_POST['data_inicio_promocao'] == "");
     $data_inicio = $data_vazia ? $data_default : $data_formatada_para_o_db;
-    # # formatando data do final da promoção para o padrão do MySQL
+    # formatando data do final da promoção para o padrão do MySQL
     $data2_formatada_para_o_db = implode("-", array_reverse(explode("/", $_POST['data_final_promocao'])));
     $data2_vazia = ($_POST['data_final_promocao'] == null || $_POST['data_final_promocao'] == "");
     $data_final = $data2_vazia ? $data_default : $data2_formatada_para_o_db;
 
-    # recebendo dados já validados via post
+    # atribuição de dados via post
     $prod_nome = $_POST['nome'];
     $prod_descricao = $_POST['descricao'];
     $prod_preco = str_replace(',', '', $_POST['preco']);
     $prod_altura = $_POST['altura'];
-    $prod_comprimento = $_POST['comprimento'];
+    $prod_comprimento = $_POST['comprimento'] >= 16.0 ? $_POST['comprimento'] : 16.0;
     $prod_peso = $_POST['peso'];
-    $prod_largura = $_POST['largura'];
+    $prod_largura = $_POST['largura'] >= 11.0 ? $_POST['largura'] : 11.0;
     $prod_promocao = $_POST['promocao'];
     $prod_preco_promocao = $preco_promocao;
     $prod_data_inicio_promocao = $data_inicio;

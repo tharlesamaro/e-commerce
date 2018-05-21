@@ -6,6 +6,8 @@
  * Time: 10:12
  */
 
+session_start();
+
 //if (isset($_POST['id'])) {
 if (Rotas::$pag[1] > 0) {
     # caso o preço da data da promoção venham sem dados
@@ -73,12 +75,7 @@ if (Rotas::$pag[1] > 0) {
     } catch (Exception $erro) {
         $_SESSION['atualizado_erro'] = true;
     }
-
-    header("Location: /ecommerce/produtos/1");
-    die();
 }
-
-$_SESSION['atualizado_sem_id'] = true;
 
 header("Location: /ecommerce/produtos/1");
 die();

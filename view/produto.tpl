@@ -1,5 +1,72 @@
-<div class="row">
-    {foreach from=$produto item=p}
+{foreach from=$produto item=p}
+    {*modal*}
+    {if {$mostrar_calculo_frete} eq 1}
+        {*modal finalizar compra*}
+        <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="modalCompraLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCompraLabel">Conclusão de compra</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{$base_url}/send" method="post">
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input class="form-control" type="text" id="nome" name="nome" minlength="5"
+                                       maxlength="100" placeholder="Nome completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input class="form-control" type="email" id="email" name="email"
+                                       placeholder="Ex: email@dominio.com" required>
+                            </div>
+                            {*campos hidden*}
+                            <input type="hidden" id="prod_nome" name="prod_nome" value="{$p.prod_nome}" hidden>
+                            <input type="hidden" id="valor_total" name="valor_total"
+                                   value="{$valor_total_produto}" hidden>
+                            {*/campos hidden*}
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                                            class="fa fa-window-close"></i> Cancelar
+                                </button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-credit-card"></i>
+                                    Comprar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {*/modal finalizar compra*}
+    {else}
+        {*modal alerta calculo de frete*}
+        <div class="modal" id="modalCompra" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> IMPORTANTE</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Por favor! Calcule o frete antes de finalizar sua compra!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {*/modal alerta calculo de frete*}
+    {/if}
+    {*/modal*}
+    <div class="row animated fadeIn">
         {*frete*}
         <div class="col-lg-3">
             <div class="row">
@@ -120,72 +187,7 @@
             </button>
             {*/botão de comprar que ativa o modal*}
             <br>
-            {if {$mostrar_calculo_frete} eq 1}
-                {*modal finalizar compra*}
-                <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Conclusão de compra</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="{$base_url}/send" method="post">
-                                    <div class="form-group">
-                                        <label for="nome">Nome:</label>
-                                        <input class="form-control" type="text" id="nome" name="nome" minlength="5"
-                                               maxlength="100" placeholder="Nome completo" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">E-mail:</label>
-                                        <input class="form-control" type="email" id="email" name="email"
-                                               placeholder="Ex: email@dominio.com" required>
-                                    </div>
-                                    {* campos hidden *}
-                                    <input type="hidden" id="prod_nome" name="prod_nome" value="{$p.prod_nome}" hidden>
-                                    <input type="hidden" id="valor_total" name="valor_total"
-                                           value="{$valor_total_produto}" hidden>
-                                    {* /campos hidden *}
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                                                    class="fa fa-window-close"></i> Cancelar
-                                        </button>
-                                        <button type="submit" class="btn btn-primary"><i class="fa fa-credit-card"></i>
-                                            Comprar
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {*/modal finalizar compra*}
-            {else}
-                {*modal alerta calculo de frete*}
-                <div class="modal" id="modalCompra" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> IMPORTANTE</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Por favor! Calcule o frete antes de finalizar sua compra!</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {*/modal alerta calculo de frete*}
-            {/if}
         </div>
         {*/Produto detalhado*}
-    {/foreach}
-</div>
+    </div>
+{/foreach}

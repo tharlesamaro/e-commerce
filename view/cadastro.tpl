@@ -1,4 +1,4 @@
-<div>
+<div class="animated fadeIn">
     {*session alertas*}
     {if $smarty.session.cadastro_sucesso}
         <p class="alert-success text-center">Produto cadastrado com sucesso!</p>

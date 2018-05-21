@@ -1,0 +1,50 @@
+.conteudo {
+    margin-top: 50px;
+}
+
+.card-produto-info {
+    height: auto !important;
+}
+
+.produto-info-footer {
+    margin-bottom: 40px;
+}
+
+.img-caminhao-frete {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.frete-resultado {
+    padding-top: 10px;
+}
+
+.botao-cadastro {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.botao-produtos {
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+body {
+    padding-top: 54px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.card {
+    height: 100%;
+}
+
+/* alertas de validação */
+label.error{
+    color: red;
+}

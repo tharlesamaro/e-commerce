@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
+    <title>{$titulo}</title>
+    {*meta*}
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{$titulo}</title>
+    <meta name="author" content="Tharles Amaro">
+    <meta name="author" content="E-commerce simples com PHP">
     {*css*}
     <link rel="stylesheet" href="{$base_url}/assets/css/normalize.css">
     <link rel="stylesheet" href="{$base_url}/assets/css/main.css">
@@ -14,7 +17,6 @@
     <link rel="stylesheet" href="{$base_url}/assets/css/animate.css">
     {*google font*}
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    {*/css*}
 </head>
 <body>
 {*navbar*}
@@ -44,7 +46,7 @@
     </div>
 </nav>
 {*/navbar*}
-<div class="animated fadeIn container conteudo">
+<div class="container conteudo">
     {php}
         Rotas::get_pag();
     {/php}
@@ -53,12 +55,11 @@
 {*javascript*}
 <script src="{$base_url}/assets/js/jquery/jquery.min.js"></script>
 <script src="{$base_url}/assets/js/jquery/jquery1.10.2.min.js" type="text/javascript"></script>
-<script src="{$base_url}/assets/js/main.js"></script>
-<script src="{$base_url}/assets/js/bootstrap.min.js"></script>
 <script src="{$base_url}/assets/js/jquery.maskedinput.js"></script>
 <script src="{$base_url}/assets/js/jquery.maskMoney.min.js"></script>
-<script src="{$base_url}/assets/js/mascaras.js"></script>
 <script src="{$base_url}/assets/js/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
+<script src="{$base_url}/assets/js/bootstrap.min.js"></script>
+<script src="{$base_url}/assets/js/main.js"></script>
 {*/javascript*}
 </body>
 </html>

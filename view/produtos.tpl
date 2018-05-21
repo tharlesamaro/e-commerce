@@ -18,7 +18,7 @@
     <div><p class="alert-success text-center">Erro ao tentar atualizar o produto!</p></div>
 {/if}
 {*/session alertas*}
-<div class="row text-center">
+<div class="row text-center animated fadeIn">
     {*produtos*}
     {foreach from=$produtos item=p}
         <div class="col-lg-3 col-md-6 mb-4">

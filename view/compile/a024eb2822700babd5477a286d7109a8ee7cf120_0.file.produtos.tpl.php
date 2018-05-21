@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-21 02:48:28
+/* Smarty version 3.1.32, created on 2018-05-21 14:06:49
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b025dac67db67_68332758',
+  'unifunc' => 'content_5b02fca9ddd6d2_11462564',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526881663,
+      1 => 1526922407,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b025dac67db67_68332758 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b02fca9ddd6d2_11462564 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_SESSION['compra_sucesso']) {?>
     <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
 <?php }
@@ -32,8 +32,14 @@ if ($_SESSION['prod_deletado_sucesso']) {?>
 <?php }
 if ($_SESSION['prod_deletado_erro']) {?>
     <div><p class="alert-success text-center">Erro ao tentar deletar produto!</p></div>
+<?php }
+if ($_SESSION['atualizado_sucesso']) {?>
+    <div><p class="alert-success text-center">Produto atualizado com sucesso!</p></div>
+<?php }
+if ($_SESSION['atualizado_erro']) {?>
+    <div><p class="alert-success text-center">Erro ao tentar atualizar o produto!</p></div>
 <?php }?>
-<div class="row text-center">
+<div class="row text-center animated fadeIn">
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['produtos']->value, 'p');
 if ($_from !== null) {

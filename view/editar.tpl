@@ -1,4 +1,4 @@
-<div>
+<div class="animated fadeIn">
     <h3 class="text-center">Edição de produto</h3>
     <hr>
     <p>Atenção! Campos com <b class="text-danger">*</b> são obrigatórios.</p>

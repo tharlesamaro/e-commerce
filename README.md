@@ -91,4 +91,4 @@ Tecnologias usadas
 - PHPStorm
 - Smarty
 
-**OBS: todos os testes foram feitos no navegador Mozila Firefox e Google Chrome.**
+**OBS: todos os testes foram feitos nos navegadores Mozila Firefox e Google Chrome.**
