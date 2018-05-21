@@ -75,7 +75,7 @@
         <div class="form-group">
             <label for="peso">Peso: <b class="text-danger">*</b></label>
             <input type="text" class="form-control" id="peso" name="peso" minlength="3" maxlength="3"
-                   placeholder="00.000" required>
+                   placeholder="00.0" required>
         </div>
         {*/peso*}
 
@@ -83,7 +83,7 @@
         <div class="form-group">
             <label for="altura">Altura: <b class="text-danger">*</b></label>
             <input type="text" class="form-control" id="altura" name="altura" minlength="3" maxlength="3"
-                   placeholder="00.00" required>
+                   placeholder="00.0" required>
         </div>
         {*/altura*}
 
@@ -91,7 +91,7 @@
         <div class=" form-group">
             <label for="comprimento">Comprimento: <b class="text-danger">*</b></label>
             <input type="text" class="form-control" id="comprimento" name="comprimento" minlength="3" maxlength="3"
-                   placeholder="00.00" required>
+                   placeholder="00.0" required>
         </div>
         {*/comprimento*}
 
@@ -99,7 +99,7 @@
         <div class="form-group">
             <label for="largura">Largura: <b class="text-danger">*</b></label>
             <input type="largura" class="form-control" id="largura" name="largura" minlength="3" maxlength="3"
-                   placeholder="00.00" required>
+                   placeholder="00.0" required>
         </div>
         {*/largura*}
 

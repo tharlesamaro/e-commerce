@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-20 23:53:53
+/* Smarty version 3.1.32, created on 2018-05-21 02:10:01
   from '/var/www/html/ecommerce/view/produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b0234c13564f9_25538299',
+  'unifunc' => 'content_5b0254a9308199_17174890',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a024eb2822700babd5477a286d7109a8ee7cf120' => 
     array (
       0 => '/var/www/html/ecommerce/view/produtos.tpl',
-      1 => 1526870991,
+      1 => 1526879392,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b0234c13564f9_25538299 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b0254a9308199_17174890 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_SESSION['compra_sucesso']) {?>
     <div><p class="alert-success text-center">Compra concluida com sucesso!</p></div>
 <?php }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{$base_url}/assets/css/main.css">
     <link rel="stylesheet" href="{$base_url}/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="{$base_url}/assets/font/web-fonts-with-css/css/fontawesome-all.css">
+    <link rel="stylesheet" href="{$base_url}/assets/css/animate.css">
     {*google font*}
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     {*/css*}
@@ -43,7 +44,7 @@
     </div>
 </nav>
 {*/navbar*}
-<div class="container conteudo">
+<div class="animated fadeIn container conteudo">
     {php}
         Rotas::get_pag();
     {/php}

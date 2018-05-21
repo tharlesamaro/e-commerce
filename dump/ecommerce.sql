@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 17/05/2018 às 15:07
+-- Tempo de geração: 21/05/2018 às 02:18
 -- Versão do servidor: 10.0.34-MariaDB-0ubuntu0.16.04.1
 -- Versão do PHP: 7.2.5-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -30,15 +30,15 @@ CREATE TABLE `produtos` (
   `prod_id` int(11) NOT NULL,
   `prod_nome` varchar(255) NOT NULL,
   `prod_descricao` varchar(255) NOT NULL,
-  `prod_preco` double(9,2) NOT NULL,
-  `prod_altura` float(5,2) NOT NULL DEFAULT '6.00',
-  `prod_comprimento` float(5,2) NOT NULL DEFAULT '20.00',
-  `prod_peso` float(5,3) NOT NULL,
-  `prod_largura` float(5,2) NOT NULL DEFAULT '20.00',
+  `prod_preco` double NOT NULL,
+  `prod_altura` float(2,1) NOT NULL,
+  `prod_comprimento` float(2,1) NOT NULL,
+  `prod_peso` float(2,1) NOT NULL,
+  `prod_largura` float(2,1) NOT NULL,
   `prod_promocao` varchar(1) NOT NULL DEFAULT 'n',
-  `prod_preco_promocao` decimal(5,2) DEFAULT NULL,
-  `prod_data_inicial_promocao` date DEFAULT NULL,
-  `prod_data_final_promocao` date DEFAULT NULL,
+  `prod_preco_promocao` decimal(10,0) DEFAULT '0',
+  `prod_data_inicial_promocao` date DEFAULT '0000-00-00',
+  `prod_data_final_promocao` date DEFAULT '0000-00-00',
   `prod_imagem` varchar(255) NOT NULL,
   `prod_data_insercao` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `prod_data_atualizacao` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -49,25 +49,15 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_descricao`, `prod_preco`, `prod_altura`, `prod_comprimento`, `prod_peso`, `prod_largura`, `prod_promocao`, `prod_preco_promocao`, `prod_data_inicial_promocao`, `prod_data_final_promocao`, `prod_imagem`, `prod_data_insercao`, `prod_data_atualizacao`) VALUES
-(1, 'Notebook Dell', 'Notebook Dell Core i10 de 15ª geração. Feito de vibranium e autografado por Linus Trovaldis.', 999.99, 6.00, 20.00, 1.500, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-15 20:06:16', '2018-05-17 15:03:21'),
-(2, 'Guitarra Les Paul', 'Guitarra Les Paul do ano de 1865. Modelo único. Edição de colecionador banhada a outro 24k.', 100000.00, 6.00, 20.00, 10.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-15 20:13:51', '2018-05-17 15:03:21'),
-(3, 'Rodo de ouro', 'Rodo de ouro para lavar a casa. Edição de colecionador, ótimo para presentes.', 1.50, 6.00, 20.00, 1.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-15 20:14:53', '2018-05-17 15:03:21'),
-(4, 'Sofá de Couro', 'Sofá de couro de última geração. Couro vegetal, não polui o meio ambiente e ainda preserva a vida dos animais.', 2000.00, 6.00, 20.00, 20.300, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-15 20:16:00', '2018-05-17 15:03:21'),
-(5, 'Ventilador Arno', 'Ventilador Arno muito bom ahsuauhsdiahsidfhaidhfiadhfia', 50.98, 6.00, 20.00, 2.330, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-15 21:09:53', '2018-05-17 15:03:21'),
-(6, 'Cadeira Branca', 'Cadeira branca de plastico que é usada para ser alugada em aniversários. Muito bom e bem cara!!!', 200.00, 6.00, 20.00, 0.500, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-15 21:10:54', '2018-05-17 15:03:21'),
-(7, 'Televisão LG', 'Televisão 4k da LG. Muito boa e a tela não quebra nunca. Resistente a água.', 14999.99, 6.00, 20.00, 2.500, 20.00, 's', '500.00', '2018-05-15', '2018-05-23', 'teste.jpg', '2018-05-15 21:11:57', '2018-05-17 15:03:21'),
-(8, 'Porta de madeira suiça', 'Porta de madeira suiça importada. Resistente a cupim e outras pragas! Material refinado.', 300.00, 6.00, 20.00, 8.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-15 21:12:51', '2018-05-17 15:03:21'),
-(9, 'Produto 9', 'adfkhdkfahkjdhfkahfkahdkhfakdhfjakhdfkahdkfhakdjhfkahdkfhasdkjfhakdfha', 400.00, 6.00, 20.00, 40.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:10:29', '2018-05-17 15:03:21'),
-(10, 'Produto 10', 'adfkhdkfahkjdhfkahfkahdkhfakdhfjakhdfkahdkfhakdjhfkahdkfhasdkjfhakdfha', 400.00, 6.00, 20.00, 40.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:11:01', '2018-05-17 15:03:21'),
-(11, 'produto 11', 'dfadfasdfasdfasdfkabdskfbsadkf akfad fajdkfkasd kfakdfakj dkjabdksj fjksdkjfakjdfka', 1000.00, 6.00, 20.00, 7.000, 20.00, 'n', '800.00', '2018-05-15', '2018-05-17', 'teste.jpg', '2018-05-16 17:12:23', '2018-05-17 15:05:52'),
-(12, 'produto 12', 'fadsfasdfadsf adf adf ad fa dfadfadfadf adfadf adfa dfadfadfadsf adfasdf adf adf ad', 10000.00, 6.00, 20.00, 5.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:12:23', '2018-05-17 15:03:21'),
-(13, 'produto 13', 'sfsadfasdfa adfadfadsfa adfadfasdf adfadfadf adfasd afsadfasd adsfadsfa fasdfa fasdfad fadfasdf', 400.00, 6.00, 20.00, 4.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:13:22', '2018-05-17 15:03:21'),
-(14, 'produto 14', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:13:52', '2018-05-17 15:03:21'),
-(15, 'produto 15', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:14:21', '2018-05-17 15:03:21'),
-(16, 'produto 16', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:14:36', '2018-05-17 15:03:21'),
-(17, 'produto 17', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:14:53', '2018-05-17 15:03:21'),
-(18, 'produto 18', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:15:11', '2018-05-17 15:03:21'),
-(19, 'produto 19', 'dfa d fa fa ds fa f adfadfad fadfadsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 700.00, 6.00, 20.00, 56.000, 20.00, 'n', NULL, NULL, NULL, 'teste.jpg', '2018-05-16 17:15:26', '2018-05-17 15:03:21');
+(33, 'Guitarra Amarela', 'Guitarra amarela do Jimi Hendrix. Banhada a ouro.', 800, 20.0, 80.0, 10.0, 50.0, 'n', '0', '0000-00-00', '0000-00-00', '63890803f2bec560c1e8f50feb1823db.jpg', '2018-05-20 18:47:21', '2018-05-20 18:47:21'),
+(34, 'PlayStation 4', 'Playstation 4 de ultima geração, acompanha 49 jogos.', 2500, 10.0, 40.0, 3.0, 40.0, 's', '750', '2018-05-19', '2018-05-30', 'c1e1641680b63a03ef1c9408d65d14c4.jpg', '2018-05-20 18:59:26', '2018-05-20 18:59:26'),
+(35, 'Celular WP', 'Windows Phone fora de moda. Também doamos se vier pegar no local.', 400, 4.0, 20.0, 5.0, 8.0, 'n', '0', '0000-00-00', '0000-00-00', '9dc99877f2b7bcea09e1a5e50fc7a30b.jpg', '2018-05-20 19:01:52', '2018-05-20 19:01:52'),
+(36, 'Controle de Xbox', 'Controle personalizado de Xbox One', 300, 10.0, 8.0, 2.0, 15.0, 's', '280', '2018-05-19', '2018-05-19', '710a86d3fb64ed72ae9f9be7f859882f.jpg', '2018-05-20 19:04:54', '2018-05-20 19:04:54'),
+(37, 'Notebook Lothuws', 'Notebook da marca Lothuws. Core i10 de 60ª geração. Possui 38 núcleos + 20 núcleos de GPU.', 9500, 20.0, 20.0, 2.5, 20.0, 'n', '0', '0000-00-00', '0000-00-00', 'a67a60852905db62144f4bb7ac79439c.jpg', '2018-05-20 19:07:12', '2018-05-20 19:07:12'),
+(38, 'PlayStation 4 Branco', 'Playstation 4 da cor branca ultra descolado. Ótimo para presentar sua família.', 900, 20.0, 20.0, 10.0, 20.0, 'n', '0', '0000-00-00', '0000-00-00', '3157ce0cb9dee386edb550b46c5ac4d8.png', '2018-05-20 19:08:17', '2018-05-20 19:08:17'),
+(39, 'Molho', 'Molho vermelho ótimo para macarronada.', 5, 3.0, 8.0, 4.0, 9.0, 's', '3', '2018-05-18', '2018-05-25', 'c2c277f393e9a76d48dcdad660f4aa71.jpg', '2018-05-20 19:10:26', '2018-05-20 19:10:26'),
+(40, 'Carro de desmanche', 'Carro de desmanche. Melhor comprar logo antes que os homi pegue.', 4000, 10.0, 20.0, 80.0, 20.0, 'n', '0', '0000-00-00', '0000-00-00', '925aba6fe35bf16bcf95944b7857593e.jpg', '2018-05-20 19:12:18', '2018-05-20 19:12:18'),
+(41, 'Tablet Samsung', 'Tablet Sansumg galaxy pocket. Semi novo.', 600, 20.0, 10.0, 2.5, 10.0, 'n', '0', '0000-00-00', '0000-00-00', 'e5e97d05d9e41ea35bf6afe05b653efe.jpg', '2018-05-21 01:57:51', '2018-05-21 01:57:51');
 
 --
 -- Índices de tabelas apagadas
@@ -87,7 +77,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

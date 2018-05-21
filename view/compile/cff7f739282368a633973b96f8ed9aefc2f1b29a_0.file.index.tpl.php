@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-05-21 01:43:16
+/* Smarty version 3.1.32, created on 2018-05-21 02:10:45
   from '/var/www/html/ecommerce/view/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b024e64c88ef4_04276582',
+  'unifunc' => 'content_5b0254d5cbdb85_96212178',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cff7f739282368a633973b96f8ed9aefc2f1b29a' => 
     array (
       0 => '/var/www/html/ecommerce/view/index.tpl',
-      1 => 1526877787,
+      1 => 1526879439,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b024e64c88ef4_04276582 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b0254d5cbdb85_96212178 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
 <head>
@@ -38,6 +38,8 @@ function content_5b024e64c88ef4_04276582 (Smarty_Internal_Template $_smarty_tpl)
 /assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /assets/font/web-fonts-with-css/css/fontawesome-all.css">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+/assets/css/animate.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     </head>
 <body>
@@ -68,7 +70,7 @@ logo.svg" width="50" height="50" alt="">
                     </div>
     </div>
 </nav>
-<div class="container conteudo">
+<div class="animated fadeIn container conteudo">
     <?php 
         Rotas::get_pag();
     ?>

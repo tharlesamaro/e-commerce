@@ -12,7 +12,7 @@ Class Template extends SmartyBC
     function __construct()
     {
         parent::__construct();
-        # diretórios usados pelo Smarty
+        # configuração dos diretórios usados pelo Smarty
         $this->setTemplateDir('view/');
         $this->setCompileDir('view/compile/');
         $this->setCacheDir('view/cache');
