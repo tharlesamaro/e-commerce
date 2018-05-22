@@ -1,5 +1,7 @@
 # E-commerce simples com PHP
 
+[Clique aqui para ver um vídeo de demonstração do projeto](https://youtu.be/aD9gQs6t46Y)
+
 Requisitos do sistema:
 -
 
